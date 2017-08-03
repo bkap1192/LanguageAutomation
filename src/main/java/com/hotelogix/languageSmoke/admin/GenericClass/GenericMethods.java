@@ -38,7 +38,7 @@ public class GenericMethods {
       
       public static GenericMethods GI(){
     	  if(GM==null){
-    		 GM= new GenericMethods();
+    		 GM = new GenericMethods();
     	  }
     	  return GM;
           }
@@ -48,7 +48,7 @@ public class GenericMethods {
       public void switchToWindowHandle(String titleval) throws Exception {
       	try{
       	  Set<String> setHndlValColls=driver.getWindowHandles();
-          Iterator<String>  itHandleColls= setHndlValColls.iterator();
+          Iterator<String>  itHandleColls=setHndlValColls.iterator();
           while(itHandleColls.hasNext()==true){
               String hndlval=itHandleColls.next();
               driver.switchTo().window(hndlval);
