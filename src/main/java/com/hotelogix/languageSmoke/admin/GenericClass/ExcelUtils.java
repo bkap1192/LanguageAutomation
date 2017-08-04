@@ -75,7 +75,6 @@ public class ExcelUtils {
 		Workbook wBook=null;
 		FileInputStream fis=new FileInputStream(filePath);
 		if(filePath.endsWith("xlsx")){
-			System.out.println("xlsx");
 			wBook=new XSSFWorkbook(fis);
 		}else{
 			wBook=new HSSFWorkbook(fis);
