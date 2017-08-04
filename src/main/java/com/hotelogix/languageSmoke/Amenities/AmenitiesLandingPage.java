@@ -6,9 +6,9 @@ public class AmenitiesLandingPage {
 	
 	
 	
-	public void fn_AddaAmenities() throws Exception{
+	public void fn_clkAddAmenity() throws Exception{
 		try{
-			GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("Hotelogix_admin_AmenitiesPage_AddaAmenities_Link"));
+			GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AmenitiesLandingPage_AddAmenity_Link"));
 		}catch(Exception e){
 			throw e;
 		}
