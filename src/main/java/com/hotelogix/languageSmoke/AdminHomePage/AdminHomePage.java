@@ -6,6 +6,12 @@ import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 
 public class AdminHomePage {
 
+	
+	
+	public static AdminHomePage AHP(){
+		return new AdminHomePage();
+	}
+	
 
 	public void fn_NavigateAnyModule(WebElement mouseover, WebElement submodule) throws Exception{
 		try{

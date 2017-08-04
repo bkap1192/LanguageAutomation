@@ -18,6 +18,7 @@ public class VerifyUtils {
 		return VU;
 	   }
 	
+	
 	public void fn_AsserEquals(String actual, String expected){
 		try{
 			Assert.assertEquals(actual, expected);
@@ -25,6 +26,7 @@ public class VerifyUtils {
 			throw e;
 		}
 	}
+	
 	
 	
 
