@@ -1,4 +1,4 @@
-package com.hotelogix.languageSmoke.Amenities;
+package com.hotelogix.languageSmoke.RoomManager.Amenities;
 
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 
