@@ -1,5 +1,7 @@
 package com.hotelogix.languageSmoke.admin.GenericClass;
 
+import java.util.ArrayList;
+
 import org.testng.Assert;
 
 public class VerifyUtils {
@@ -27,7 +29,19 @@ public class VerifyUtils {
 		}
 	}
 	
+	public void fn_AssertContains(String actual,String expected){
+		try{
+		Assert.assertEquals(actual.contains(expected), true);
+		}catch(AssertionError e){
+			throw e;
+		}
+	}
 	
-	
-
+	public void fn_AssertContainsInArray(ArrayList<String> actual,String expected){
+		try{
+		Assert.assertEquals(actual.contains(expected), true);
+		}catch(AssertionError e){
+			throw e;
+		}
+	}
 }

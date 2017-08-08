@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,7 +20,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GenericMethods {
 
@@ -287,4 +290,27 @@ public class GenericMethods {
         return randStr.toString();
     }
 	
+    
+    public  String value;
+    public  String ActionOnAlert(String Action){
+    	  try{
+
+    		   WebDriverWait wait = new WebDriverWait(driver,30);
+    		   Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+    		   value=alert.getText();
+    		   if(Action.equalsIgnoreCase("Accept")){
+    		   alert.accept();
+    		   }
+    		   else if(Action.equalsIgnoreCase("Dismiss")){
+    		   alert.dismiss();
+    		   }
+    		   else if(Action.equalsIgnoreCase("")){
+    		   }
+    		}catch(Throwable e){
+    		   System.err.println("Error came while waiting for the alert popup. "+e.getMessage());
+    		}
+
+    	  return value;
+    	  }
 }
