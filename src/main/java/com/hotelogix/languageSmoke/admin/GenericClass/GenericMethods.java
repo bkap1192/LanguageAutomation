@@ -49,6 +49,15 @@ public class GenericMethods {
     	  return GM;
           }
       
+      static int min=1;
+      static int max=1000;
+
+      public  int randomNumber()
+      {
+     	 Random rand = new Random();
+     	 int randomNum = rand.nextInt((max-min)+1)+min;
+     	 return randomNum;
+      }
       
       
       public void switchToWindowHandle(String titleval) throws Exception {
