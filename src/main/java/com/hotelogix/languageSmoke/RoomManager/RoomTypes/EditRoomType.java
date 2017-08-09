@@ -18,7 +18,7 @@ public class EditRoomType {
 	public ArrayList<String> fn_getAmenities() throws Exception{
 		try{
 		ArrayList<String> arr =new ArrayList<String>();
-		Select sel=new Select(GenericMethods.GI().getWebElement("A_EditRoomTypePag_SelectedAmenities_DD"));
+		Select sel=new Select(GenericMethods.GI().getWebElement("A_EditRoomTypePage_SelectedAmenities_DD"));
 		List<WebElement> ele=  sel.getOptions();
 		for(WebElement ele1:ele){
 			arr.add(ele1.getText());
