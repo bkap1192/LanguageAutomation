@@ -16,7 +16,7 @@ public class RoomsListLandingPage {
 	
 	public String fn_verifyMsg() throws Exception{
 		try{
-		String str=GenericMethods.GI().fn_GetText(GenericMethods.GI().getWebElement("A_AmenitiesLandingPage_Message_Text"));
+		String str=GenericMethods.GI().fn_GetText(GenericMethods.GI().getWebElement("A_RoomsListLandingPage_Message_Text"));
 		return str;
 		}catch(Exception e){
 			throw e;

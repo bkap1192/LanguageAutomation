@@ -24,7 +24,7 @@ public class AdminTest_PT {
 
 	private HashMap<String ,String> HM;
 	private String sheetname="Admin_SZ_Portuguese";
-	private String Path="TestData//LanguagesTestData.xlsx";
+	private String Path="D://LanguageTest//LanguageAutomation//TestData//LanguagesTestData.xlsx";
 	
 	                          
 	
@@ -42,7 +42,7 @@ public class AdminTest_PT {
 	    }
 	
 	
-	//@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
+	@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
 	public void fn_verifyAdmineConsoleSuccessfulLogin() throws Exception{
 		try{
 			String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -58,7 +58,7 @@ public class AdminTest_PT {
 	
 	
 
-	//@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
+	@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
 	public void fn_verifyAdditionOfAmenity() throws Exception{
 		try{
 		
@@ -90,8 +90,9 @@ public class AdminTest_PT {
 	    }
 	
 	
-	@Test(priority=3,description="Added Room is displayed on 'Rooms List' page with status as active(green tick)")
-	public void fn_verifyAdditionOfRoom() throws Exception{
+	//@Test(priority=3,description="Added Room is displayed on 'Rooms List' page with status as active(green tick)")
+	public void fn_verifyAdditionOfRoom() throws Throwable{
+	try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
 		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_Rooms"));
@@ -102,12 +103,13 @@ public class AdminTest_PT {
         ARP.fn_fillAddRoomDetails();
         String text=RLP.fn_verifyMsg();
         VerifyUtils.VU().fn_AsserEquals(text,HM.get("Message_Text1")+'"'+ARP.roomName+'"'+HM.get("Message_Text2") );
-        
-        
-        
-        
-        
-        
+        BasePage BP=new BasePage();
+		BP.fn_viewAll();
+		ArrayList<String> l1=BP.fn_GetAddedFields();
+	    VerifyUtils.VU().fn_AssertContainsInArray(l1,ARP.roomName);
+	}catch(Throwable e){
+		throw e;
+	}
 	}
 	
 	@AfterMethod
