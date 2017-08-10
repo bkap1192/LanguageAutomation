@@ -5,8 +5,8 @@
     <classes>
       <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
         <methods>
+          <include name="fn_verifySaveAndDuplicateRoomBtn"/>
           <include name="Login"/>
-          <include name="fn_verifyAdditionOfAmenity"/>
           <include name="fn_close"/>
         </methods>
       </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->

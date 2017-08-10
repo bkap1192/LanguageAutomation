@@ -1,5 +1,6 @@
 package com.hotelogix.languageSmoke.test.Admin;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,9 +13,12 @@ import com.hotelogix.languageSmoke.BaseUtils.BasePage;
 import com.hotelogix.languageSmoke.LoginPage.LoginClass;
 import com.hotelogix.languageSmoke.RoomManager.Amenities.AddAmenity;
 import com.hotelogix.languageSmoke.RoomManager.Amenities.AmenitiesListLandingPage;
+import com.hotelogix.languageSmoke.RoomManager.RoomTaxes.AddRoomTax;
+import com.hotelogix.languageSmoke.RoomManager.RoomTaxes.RoomTaxListPage;
 import com.hotelogix.languageSmoke.RoomManager.RoomTypes.EditRoomType;
 import com.hotelogix.languageSmoke.RoomManager.RoomTypes.RoomTypesLandingPage;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.AddARoomPage;
+import com.hotelogix.languageSmoke.RoomManager.Rooms.AddMultipleRooms;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.RoomsListLandingPage;
 import com.hotelogix.languageSmoke.admin.GenericClass.ExcelUtils;
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
@@ -42,7 +46,7 @@ public class AdminTest_PT {
 	    }
 	
 	
-	@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
+	//@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
 	public void fn_verifyAdmineConsoleSuccessfulLogin() throws Exception{
 		try{
 			String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -58,7 +62,7 @@ public class AdminTest_PT {
 	
 	
 
-	@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
+	//@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
 	public void fn_verifyAdditionOfAmenity() throws Exception{
 		try{
 		
@@ -111,6 +115,40 @@ public class AdminTest_PT {
 		throw e;
 	}
 	}
+	
+	
+	//@Test(priority=4,description="On clicking 'Save and Duplicate' button on 'Add/Edit a Room',all the rooms of the same room type are displayed in ")
+	public void fn_verifySaveAndDuplicateRoomBtn() throws Throwable{
+		try{
+		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_Rooms"));
+		RoomsListLandingPage RLP=new RoomsListLandingPage();
+        RLP.fn_clkAddARoom();
+        AddARoomPage ARP=new AddARoomPage();
+        ARP.fn_fillMultipleRoomDetails();
+        String text=RLP.fn_verifyMsg();
+        VerifyUtils.VU().fn_AsserEquals(text,HM.get("Message_Text1")+'"'+ARP.room1+'"'+HM.get("Message_Text2") );
+		}catch(Throwable e){
+			throw e;
+		}
+	}
+	
+	
+	@Test(priority=5,description="Creation of room tax and attaching it to a room type.")
+	public void fn_verifyRoomTaxSelectionInRoomType() throws Exception{
+		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_RoomTax"));
+        RoomTaxListPage RTP=new RoomTaxListPage();
+        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("RoomTaxList_Title"));
+        RTP.fn_clkAddATax();
+        AddRoomTax ART=new AddRoomTax();
+        
+        
+	}
+	
+	
 	
 	@AfterMethod
 	public void fn_close(){
