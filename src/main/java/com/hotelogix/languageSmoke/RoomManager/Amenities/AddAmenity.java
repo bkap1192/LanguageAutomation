@@ -11,6 +11,7 @@ public class AddAmenity {
 	public void fn_addAmenityDetails() throws Exception{
 		try{
 		amenityName=GenericMethods.GI().generateRandomString();
+		System.out.println(amenityName);
 		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddAmenityPage_AmenityTitle_ED"), amenityName);
 	    GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddAmenityPage_AmenityDescription_ED"), amenityName);
 	    GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddAmenityPage_Save_BTN"));

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="54682" started-at="2017-08-09T07:16:55Z" finished-at="2017-08-09T07:17:50Z">
     <groups>
     </groups>
@@ -85,6 +86,46 @@ Driver info: driver.version: unknown
           </reporter-output>
         </test-method> <!-- fn_verifyAdditionOfAmenity -->
         <test-method status="SKIP" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a]" name="fn_close" is-config="true" duration-ms="0" started-at="2017-08-09T12:47:50Z" finished-at="2017-08-09T12:47:50Z">
+=======
+  <suite name="Default suite" duration-ms="90823" started-at="2017-08-09T09:50:10Z" finished-at="2017-08-09T09:51:41Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="90823" started-at="2017-08-09T09:50:10Z" finished-at="2017-08-09T09:51:41Z">
+      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="21464" started-at="2017-08-09T15:20:10Z" finished-at="2017-08-09T15:20:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="fn_verifyAdmineConsoleSuccessfulLogin()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdmineConsoleSuccessfulLogin" duration-ms="469" started-at="2017-08-09T15:20:32Z" description="User gets redirected to homepage of Admine Console after login." finished-at="2017-08-09T15:20:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_verifyAdmineConsoleSuccessfulLogin -->
+        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="5" started-at="2017-08-09T15:20:32Z" finished-at="2017-08-09T15:20:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_close -->
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16589" started-at="2017-08-09T15:20:32Z" finished-at="2017-08-09T15:20:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="fn_verifyAdditionOfAmenity()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdditionOfAmenity" duration-ms="21652" started-at="2017-08-09T15:20:49Z" description="Added amenity gets displayed on &#039;Amenities List&#039; page and is also displayed on &#039;Add a Room Type&#039; page under &#039;Select Amenities&#039; &gt;&gt; &#039;Available Amenities&#039;" finished-at="2017-08-09T15:21:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_verifyAdditionOfAmenity -->
+        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="5" started-at="2017-08-09T15:21:10Z" finished-at="2017-08-09T15:21:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_close -->
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16223" started-at="2017-08-09T15:21:10Z" finished-at="2017-08-09T15:21:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="fn_verifyAdditionOfRoom()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdditionOfRoom" duration-ms="14394" started-at="2017-08-09T15:21:27Z" description="Added Room is displayed on &#039;Rooms List&#039; page with status as active(green tick)" finished-at="2017-08-09T15:21:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_verifyAdditionOfRoom -->
+        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="9" started-at="2017-08-09T15:21:41Z" finished-at="2017-08-09T15:21:41Z">
+>>>>>>> f4740c1d2d0946af67dd56e0d9c8e4aa4afaf2c8
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_close -->

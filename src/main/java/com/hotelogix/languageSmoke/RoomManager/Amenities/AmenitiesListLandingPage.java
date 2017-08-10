@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
 
-public class AmenitiesLandingPage {
+public class AmenitiesListLandingPage {
 	
 	
 	
