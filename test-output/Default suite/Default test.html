@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 03 16:04:48 IST 2017</td>
+<td>Started on:</td><td>Wed Aug 09 12:46:55 IST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>13 seconds (13505 ms)</td>
+<tr><td>Total time:</td><td>54 seconds (54682 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,8 +76,23 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.Login()'><b>Login</b><br>Test class: com.hotelogix.languageSmoke.test.Admin.AdminTest_PT</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.Login(AdminTest_PT.java:29)
+<td><div><pre>org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Command duration or timeout: 50.03 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;hms-PCdin&apos;, ip: &apos;192.168.2.113&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: cec03f6c-3306-49cf-9d73-70552b1445e0
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.fn_LaunchBrowser(GenericMethods.java:82)
+	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.Login(AdminTest_PT.java:40)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -101,12 +116,35 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
 	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-</pre></div><a href='#' onClick='toggleBox("stack-trace27215255", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace27215255'><pre>java.lang.NullPointerException
-	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.Login(AdminTest_PT.java:29)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;hms-PCdin&apos;, ip: &apos;192.168.2.113&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+</pre></div><a href='#' onClick='toggleBox("stack-trace32979230", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace32979230'><pre>org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Command duration or timeout: 50.03 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;hms-PCdin&apos;, ip: &apos;192.168.2.113&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: cec03f6c-3306-49cf-9d73-70552b1445e0
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
+	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.fn_LaunchBrowser(GenericMethods.java:82)
+	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.Login(AdminTest_PT.java:40)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -130,12 +168,20 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
 	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;hms-PCdin&apos;, ip: &apos;192.168.2.113&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_45&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
+	at &lt;anonymous class&gt;.WebLoadingListener/e(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
+	at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
 </pre></div></td>
 <td>0</td>
-<td>com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1847718</td></tr>
+<td>com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -148,7 +194,7 @@ function toggleAllBoxes() {
 <td title='com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.fn_close()'><b>fn_close</b><br>Test class: com.hotelogix.languageSmoke.test.Admin.AdminTest_PT</td>
 <td></td>
 <td>0</td>
-<td>com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1847718</td></tr>
+<td>com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -158,10 +204,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.TC_01()'><b>TC_01</b><br>Test class: com.hotelogix.languageSmoke.test.Admin.AdminTest_PT</td>
+<td title='com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.fn_verifyAdditionOfAmenity()'><b>fn_verifyAdditionOfAmenity</b><br>Test class: com.hotelogix.languageSmoke.test.Admin.AdminTest_PT<br>Test method: Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'</td>
 <td></td>
 <td>0</td>
-<td>com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1847718</td></tr>
+<td>com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a</td></tr>
 </table><p>
 </body>
 </html>

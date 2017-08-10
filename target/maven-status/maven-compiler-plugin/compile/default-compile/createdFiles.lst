@@ -1,1 +1,8 @@
+com\hotelogix\languageSmoke\RoomManager\Amenities\AmenitiesLandingPage.class
+com\hotelogix\languageSmoke\RoomManager\Amenities\AddAmenity.class
+com\hotelogix\languageSmoke\admin\GenericClass\ExcelUtils.class
 com\hotelogix\languageSmoke\admin\GenericClass\GenericMethods.class
+com\hotelogix\languageSmoke\BaseUtils\BasePage.class
+com\hotelogix\languageSmoke\RoomManager\RoomTypes\RoomTypesLandingPage.class
+com\hotelogix\languageSmoke\admin\GenericClass\VerifyUtils.class
+com\hotelogix\languageSmoke\LoginPage\LoginClass.class
