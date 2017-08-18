@@ -39,6 +39,16 @@ public class BasePage {
 		}
 	}
 	
+	
+	public void fn_clkAttachPkgLink() throws Exception{
+		try{
+		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AttachAPackage_Link"));
+		}catch(Exception e){
+			throw e;
+		}
+	}
+	
+	
 	public void fn_viewAll() throws Exception{
 		try{
 			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("A_ViewAll_DD"), "All");
@@ -47,5 +57,7 @@ public class BasePage {
 			throw e;
 		}
 	}
+	
+	
 	
 }

@@ -14,6 +14,14 @@ public class RoomsListLandingPage {
 	}
 	
 	
+	public void fn_clkAddMultipleRooms() throws Exception{
+		try{
+		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_RoomsListLandingPage_AddMultipleRooms"));
+		}catch(Exception e){
+			throw e;
+		}
+	}
+	
 	public String fn_verifyMsg() throws Exception{
 		try{
 		String str=GenericMethods.GI().fn_GetText(GenericMethods.GI().getWebElement("A_RoomsListLandingPage_Message_Text"));

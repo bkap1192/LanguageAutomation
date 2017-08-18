@@ -322,4 +322,36 @@ public class GenericMethods {
 
     	  return value;
     	  }
+
+
+
+public  String GetCurrentWindowID(){
+
+
+    String Currenthandle4 = driver.getWindowHandle();
+//
+        System.out.println("parent window id:"+Currenthandle4);
+
+        return Currenthandle4;
 }
+
+public   void  windowHandle(String ParentID) throws InterruptedException{
+
+       Set<String> handles4= driver.getWindowHandles();
+         handles4.remove(ParentID);
+         driver.switchTo().window(handles4.iterator().next());
+         Thread.sleep(2000);
+}
+
+
+public  void Switch_Parent_Window(String ParentID){
+
+	   driver.switchTo().window(ParentID);
+	   System.out.println("Yoo Back to Parent Window...");
+	   }
+}
+
+
+
+
+

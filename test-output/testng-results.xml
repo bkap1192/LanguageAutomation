@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="90823" started-at="2017-08-09T09:50:10Z" finished-at="2017-08-09T09:51:41Z">
+  <suite name="Default suite" duration-ms="40338" started-at="2017-08-17T12:43:26Z" finished-at="2017-08-17T12:44:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="90823" started-at="2017-08-09T09:50:10Z" finished-at="2017-08-09T09:51:41Z">
+    <test name="Default test" duration-ms="40338" started-at="2017-08-17T12:43:26Z" finished-at="2017-08-17T12:44:07Z">
       <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="21464" started-at="2017-08-09T15:20:10Z" finished-at="2017-08-09T15:20:32Z">
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16649" started-at="2017-08-17T18:13:26Z" finished-at="2017-08-17T18:13:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdmineConsoleSuccessfulLogin()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdmineConsoleSuccessfulLogin" duration-ms="469" started-at="2017-08-09T15:20:32Z" description="User gets redirected to homepage of Admine Console after login." finished-at="2017-08-09T15:20:32Z">
+        <test-method status="FAIL" signature="fn_verifyAddAPackageWithInclusion()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAddAPackageWithInclusion" duration-ms="23304" started-at="2017-08-17T18:13:43Z" description="Creation of package in Package Master and attaching an Add-on to it." finished-at="2017-08-17T18:14:06Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:286)
+	at org.testng.Assert.assertEquals(Assert.java:296)
+	at com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils.fn_AssertContainsInArray(VerifyUtils.java:42)
+	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.fn_verifyAddAPackageWithInclusion(AdminTest_PT.java:244)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_verifyAdmineConsoleSuccessfulLogin -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="5" started-at="2017-08-09T15:20:32Z" finished-at="2017-08-09T15:20:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16589" started-at="2017-08-09T15:20:32Z" finished-at="2017-08-09T15:20:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfAmenity()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdditionOfAmenity" duration-ms="21652" started-at="2017-08-09T15:20:49Z" description="Added amenity gets displayed on &#039;Amenities List&#039; page and is also displayed on &#039;Add a Room Type&#039; page under &#039;Select Amenities&#039; &gt;&gt; &#039;Available Amenities&#039;" finished-at="2017-08-09T15:21:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfAmenity -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="5" started-at="2017-08-09T15:21:10Z" finished-at="2017-08-09T15:21:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16223" started-at="2017-08-09T15:21:10Z" finished-at="2017-08-09T15:21:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfRoom()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdditionOfRoom" duration-ms="14394" started-at="2017-08-09T15:21:27Z" description="Added Room is displayed on &#039;Rooms List&#039; page with status as active(green tick)" finished-at="2017-08-09T15:21:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfRoom -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="9" started-at="2017-08-09T15:21:41Z" finished-at="2017-08-09T15:21:41Z">
+        </test-method> <!-- fn_verifyAddAPackageWithInclusion -->
+        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="372" started-at="2017-08-17T18:14:06Z" finished-at="2017-08-17T18:14:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_close -->
