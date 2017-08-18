@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\admin\GenericClass\VerifyUtils.java
 D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\LoginPage\LoginClass.java
 D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\Rooms\RoomsListLandingPage.java
@@ -13,3 +14,13 @@ D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\Bas
 D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\RoomTaxes\RoomTaxListPage.java
 D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\RoomTypes\EditRoomType.java
 D:\LanguageTest\LanguageAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\RoomTaxes\AddRoomTax.java
+=======
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\BaseUtils\BasePage.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\Amenities\AddAmenity.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\admin\GenericClass\GenericMethods.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\Amenities\AmenitiesLandingPage.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\LoginPage\LoginClass.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\RoomManager\RoomTypes\RoomTypesLandingPage.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\admin\GenericClass\VerifyUtils.java
+D:\SpanishSmoke\LanguagesAutomation\src\main\java\com\hotelogix\languageSmoke\admin\GenericClass\ExcelUtils.java
+>>>>>>> c285424c1694e69bc0865850d65dcb44759eadcd

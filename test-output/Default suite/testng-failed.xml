@@ -6,8 +6,17 @@
       <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
         <methods>
           <include name="Login"/>
+<<<<<<< HEAD
           <include name="fn_verifyAddAPackageWithInclusion"/>
+=======
+<<<<<<< HEAD
+          <include name="fn_Beforeclass"/>
+          <include name="fn_verifyAdditionOfAmenity"/>
+=======
+          <include name="fn_verifyAdditionOfAmenity"/>
+>>>>>>> c285424c1694e69bc0865850d65dcb44759eadcd
           <include name="fn_close"/>
+>>>>>>> f4740c1d2d0946af67dd56e0d9c8e4aa4afaf2c8
         </methods>
       </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
     </classes>

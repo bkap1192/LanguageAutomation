@@ -3,9 +3,11 @@ package com.hotelogix.languageSmoke.test.Admin;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -42,18 +44,25 @@ public class AdminTest_PT {
 
 	private HashMap<String ,String> HM;
 	private String sheetname="Admin_SZ_Portuguese";
+
+	private Properties OR;
+	private String propertiesfile="D:\\SpanishSmoke\\LanguagesAutomation\\Config.properties";                          
+
 	private String Path="D://LanguageTest//LanguageAutomation//TestData//LanguagesTestData.xlsx";
+
 	
-	                          
+	
+	@BeforeClass
+	public void fn_Beforeclass(){
+		OR=GenericMethods.GI().loadOR(propertiesfile);
+	}
 	
 	
 	@BeforeMethod
 	public void Login() throws Exception{
 		try{
 			GenericMethods.GI().fn_LaunchBrowser("FF", "http://hotelogix.stayezee.com/admine/login/login/");
-		
-			new LoginClass().fn_LoginHotel(GenericMethods.GI().loadOR().getProperty("Hotel_ID"), GenericMethods.GI().loadOR().getProperty("UserName"), GenericMethods.GI().loadOR().getProperty("Password"));
-		
+			new LoginClass().fn_LoginHotel(OR.getProperty("HotelID_Admin_SZ"), OR.getProperty("UserName_Admin_SZ"), OR.getProperty("Password_Admin_SZ"));
 		}catch(Exception e){
 			throw e;
 		}
@@ -68,7 +77,6 @@ public class AdminTest_PT {
 			VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("Adminstrator_Title"));		
 		}catch(Exception e){
 			throw e;
-			
 		}finally {
 			
 		}
@@ -98,10 +106,14 @@ public class AdminTest_PT {
 		    VerifyUtils.VU().fn_AssertContainsInArray(l1, AA.amenityName);
 		    BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"),GenericMethods.GI().getWebElement("A_AdminHomePage_RoomTypes"));
 		    RoomTypesLandingPage RTLP=new RoomTypesLandingPage();
+
+		   
+
 		    RTLP.fn_clkEdit();
 		    EditRoomType ERT=new EditRoomType();
 		    ArrayList<String> arr1=ERT.fn_getAmenities();
 		    VerifyUtils.VU().fn_AssertContainsInArray(arr1, AA.amenityName);		    		    
+
 		}catch(Exception e){
 			throw e;
 		}

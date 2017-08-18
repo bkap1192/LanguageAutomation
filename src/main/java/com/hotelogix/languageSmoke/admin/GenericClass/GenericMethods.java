@@ -1,5 +1,6 @@
 package com.hotelogix.languageSmoke.admin.GenericClass;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +31,7 @@ public class GenericMethods {
 	public WebDriver driver;
 	private static GenericMethods GM;
 	
-	private String P_PropertiesPath="D:\\LanguageTest\\LanguageAutomation\\Admin_PT.properties";
+	private String P_PropertiesPath="./LanguageAutomation/Admin_PT.properties";
 	private String S_PropertiesPath="D:\\SpanishSmoke\\LanguagesAutomation\\Spanish.properties";
 	
 	
@@ -215,10 +216,25 @@ public class GenericMethods {
 	         }
 	        }
 	
-	public Properties loadOR(){
+	public Properties loadOR(String path){
+		Properties ORF=null;
 		try {
+				FileInputStream fis=new FileInputStream(path);
+				 ORF=new Properties();
+				ORF.load(fis);
+				return ORF;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		      return ORF;
+	        }
+	
+	private Properties loadOR(){
+		try {
+			String CP = System.getProperty("user.dir");
 			if(OR==null){
-				FileInputStream fis=new FileInputStream(P_PropertiesPath);
+				System.getProperty(P_PropertiesPath);
+				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_PT.properties");//D:\SpanishSmoke\LanguagesAutomation\Admin_PT.properties
 				OR=new Properties();
 				OR.load(fis);
 				return OR;
