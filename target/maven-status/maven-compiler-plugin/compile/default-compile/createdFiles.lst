@@ -1,2 +1,15 @@
-LanguagesAutomation\LanguagesAutomation\App.class
+com\hotelogix\languageSmoke\RoomManager\Rooms\AddMultipleRooms.class
+com\hotelogix\languageSmoke\RoomManager\Rooms\AddARoomPage.class
 com\hotelogix\languageSmoke\admin\GenericClass\GenericMethods.class
+com\hotelogix\languageSmoke\RoomManager\RoomTypes\RoomTypesLandingPage.class
+com\hotelogix\languageSmoke\LoginPage\LoginClass.class
+com\hotelogix\languageSmoke\RoomManager\Rooms\RoomsListLandingPage.class
+com\hotelogix\languageSmoke\RoomManager\RoomTypes\EditRoomType.class
+com\hotelogix\languageSmoke\RoomManager\Amenities\AddAmenity.class
+com\hotelogix\languageSmoke\admin\GenericClass\ExcelUtils.class
+com\hotelogix\languageSmoke\RoomManager\Amenities\AmenitiesListLandingPage.class
+com\hotelogix\languageSmoke\RoomManager\RoomTaxes\RoomTaxListPage.class
+com\hotelogix\languageSmoke\BaseUtils\BasePage.class
+com\hotelogix\languageSmoke\admin\GenericClass\VerifyUtils.class
+com\hotelogix\languageSmoke\RoomManager\RoomTaxes\AddRoomTax.class
+com\hotelogix\languageSmoke\RoomManager\RoomTypes\AddRoomType.class
