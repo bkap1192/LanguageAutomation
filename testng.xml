@@ -6,7 +6,7 @@
     
   <test name="Test">
     <classes>
-     <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT"/>   
+     <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT"/>   
        </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

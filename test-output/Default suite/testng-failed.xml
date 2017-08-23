@@ -3,22 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
+      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
         <methods>
-          <include name="Login"/>
-<<<<<<< HEAD
-          <include name="fn_verifyAddAPackageWithInclusion"/>
-=======
-<<<<<<< HEAD
-          <include name="fn_Beforeclass"/>
-          <include name="fn_verifyAdditionOfAmenity"/>
-=======
-          <include name="fn_verifyAdditionOfAmenity"/>
->>>>>>> c285424c1694e69bc0865850d65dcb44759eadcd
-          <include name="fn_close"/>
->>>>>>> f4740c1d2d0946af67dd56e0d9c8e4aa4afaf2c8
+          <include name="fn_Login"/>
+          <include name="fn_Test"/>
+          <include name="fn_LoadOR"/>
         </methods>
-      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
+      </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,6 +2,7 @@ package com.hotelogix.languageSmoke.admin.GenericClass;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
@@ -24,6 +25,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 
 public class GenericMethods {
 
@@ -59,6 +61,21 @@ public class GenericMethods {
      	 int randomNum = rand.nextInt((max-min)+1)+min;
      	 return randomNum;
       }
+      
+      
+ 
+      public Properties fn_loadpro() throws Exception{
+    	  Properties pro=new Properties();
+    	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+"Frontdesk_PT.properties");
+    	  pro.load(fis);
+    	  OR=loadOR();
+          OR.putAll(pro);
+    	  return OR;
+      }
+      
+      
+      
+      
       
       
       public void switchToWindowHandle(String titleval) throws Exception {
@@ -234,7 +251,7 @@ public class GenericMethods {
 			String CP = System.getProperty("user.dir");
 			if(OR==null){
 				System.getProperty(P_PropertiesPath);
-				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_PT.properties");//D:\SpanishSmoke\LanguagesAutomation\Admin_PT.properties
+				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_PT.properties");
 				OR=new Properties();
 				OR.load(fis);
 				return OR;
@@ -259,7 +276,7 @@ public class GenericMethods {
 	}
 	
     public By getLocator(String ORElementName){
-		OR=loadOR();
+		//OR=loadOR();
 		String orLocatorInfo=OR.getProperty(ORElementName);
 		String locatorValue=orLocatorInfo.split("##")[0];
 		String locatorType=orLocatorInfo.split("##")[1];

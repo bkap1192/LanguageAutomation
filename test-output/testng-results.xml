@@ -1,184 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="40338" started-at="2017-08-17T12:43:26Z" finished-at="2017-08-17T12:44:07Z">
-=======
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="54682" started-at="2017-08-09T07:16:55Z" finished-at="2017-08-09T07:17:50Z">
+  <suite name="Default suite" duration-ms="147130" started-at="2017-08-21T09:22:29Z" finished-at="2017-08-21T09:24:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54682" started-at="2017-08-09T07:16:55Z" finished-at="2017-08-09T07:17:50Z">
-      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
-        <test-method status="PASS" signature="fn_Beforeclass()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a]" name="fn_Beforeclass" is-config="true" duration-ms="12" started-at="2017-08-09T12:46:55Z" finished-at="2017-08-09T12:46:55Z">
+    <test name="Default test" duration-ms="147130" started-at="2017-08-21T09:22:29Z" finished-at="2017-08-21T09:24:56Z">
+      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
+        <test-method status="PASS" signature="fn_LoadOR()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@19f7cdf]" name="fn_LoadOR" is-config="true" duration-ms="151" started-at="2017-08-21T14:52:29Z" finished-at="2017-08-21T14:52:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_Beforeclass -->
-        <test-method status="FAIL" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a]" name="Login" is-config="true" duration-ms="0" started-at="2017-08-09T12:46:55Z" finished-at="2017-08-09T12:46:55Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Timed out waiting for page load.
-Command duration or timeout: 50.03 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'hms-PCdin', ip: '192.168.2.113', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: cec03f6c-3306-49cf-9d73-70552b1445e0]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Timed out waiting for page load.
-Command duration or timeout: 50.03 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'hms-PCdin', ip: '192.168.2.113', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: cec03f6c-3306-49cf-9d73-70552b1445e0
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:316)
-	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.fn_LaunchBrowser(GenericMethods.java:82)
-	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.Login(AdminTest_PT.java:40)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-Caused by: org.openqa.selenium.TimeoutException: Timed out waiting for page load.
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'hms-PCdin', ip: '192.168.2.113', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_45'
-Driver info: driver.version: unknown
-	at <anonymous class>.Utils.initWebLoadingListener/<(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9071)
-	at <anonymous class>.WebLoadingListener/e(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5142)
-	at <anonymous class>.WebLoadingListener/<(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5150)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/din/AppData/Local/Temp/anonymous3171304925828110550webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- fn_LoadOR -->
+        <test-method status="PASS" signature="fn_Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@19f7cdf]" name="fn_Login" is-config="true" duration-ms="147105" started-at="2017-08-21T14:52:29Z" finished-at="2017-08-21T14:54:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="SKIP" signature="fn_verifyAdditionOfAmenity()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a]" name="fn_verifyAdditionOfAmenity" duration-ms="2" started-at="2017-08-09T12:47:50Z" description="Added amenity gets displayed on &#039;Amenities List&#039; page and is also displayed on &#039;Add a Room Type&#039; page under &#039;Select Amenities&#039; &gt;&gt; &#039;Available Amenities&#039;" finished-at="2017-08-09T12:47:50Z">
+        </test-method> <!-- fn_Login -->
+        <test-method status="PASS" signature="fn_Test()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@19f7cdf]" name="fn_Test" duration-ms="14" started-at="2017-08-21T14:54:56Z" finished-at="2017-08-21T14:54:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfAmenity -->
-        <test-method status="SKIP" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@118837a]" name="fn_close" is-config="true" duration-ms="0" started-at="2017-08-09T12:47:50Z" finished-at="2017-08-09T12:47:50Z">
-=======
-  <suite name="Default suite" duration-ms="90823" started-at="2017-08-09T09:50:10Z" finished-at="2017-08-09T09:51:41Z">
->>>>>>> c285424c1694e69bc0865850d65dcb44759eadcd
-    <groups>
-    </groups>
-    <test name="Default test" duration-ms="40338" started-at="2017-08-17T12:43:26Z" finished-at="2017-08-17T12:44:07Z">
-      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16649" started-at="2017-08-17T18:13:26Z" finished-at="2017-08-17T18:13:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="FAIL" signature="fn_verifyAddAPackageWithInclusion()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAddAPackageWithInclusion" duration-ms="23304" started-at="2017-08-17T18:13:43Z" description="Creation of package in Package Master and attaching an Add-on to it." finished-at="2017-08-17T18:14:06Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:286)
-	at org.testng.Assert.assertEquals(Assert.java:296)
-	at com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils.fn_AssertContainsInArray(VerifyUtils.java:42)
-	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.fn_verifyAddAPackageWithInclusion(AdminTest_PT.java:244)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
-        </test-method> <!-- fn_verifyAddAPackageWithInclusion -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="372" started-at="2017-08-17T18:14:06Z" finished-at="2017-08-17T18:14:07Z">
-=======
-        </test-method> <!-- fn_verifyAdmineConsoleSuccessfulLogin -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="5" started-at="2017-08-09T15:20:32Z" finished-at="2017-08-09T15:20:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16589" started-at="2017-08-09T15:20:32Z" finished-at="2017-08-09T15:20:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfAmenity()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdditionOfAmenity" duration-ms="21652" started-at="2017-08-09T15:20:49Z" description="Added amenity gets displayed on &#039;Amenities List&#039; page and is also displayed on &#039;Add a Room Type&#039; page under &#039;Select Amenities&#039; &gt;&gt; &#039;Available Amenities&#039;" finished-at="2017-08-09T15:21:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfAmenity -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="5" started-at="2017-08-09T15:21:10Z" finished-at="2017-08-09T15:21:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="Login" is-config="true" duration-ms="16223" started-at="2017-08-09T15:21:10Z" finished-at="2017-08-09T15:21:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfRoom()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_verifyAdditionOfRoom" duration-ms="14394" started-at="2017-08-09T15:21:27Z" description="Added Room is displayed on &#039;Rooms List&#039; page with status as active(green tick)" finished-at="2017-08-09T15:21:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfRoom -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@17fd0e6]" name="fn_close" is-config="true" duration-ms="9" started-at="2017-08-09T15:21:41Z" finished-at="2017-08-09T15:21:41Z">
->>>>>>> f4740c1d2d0946af67dd56e0d9c8e4aa4afaf2c8
->>>>>>> c285424c1694e69bc0865850d65dcb44759eadcd
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
+        </test-method> <!-- fn_Test -->
+      </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
