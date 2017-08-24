@@ -1,4 +1,4 @@
-package com.hotelogix.languageSmoke.PriceManager;
+package com.hotelogix.languageSmoke.PriceManager.PackageMaster;
 
 import java.util.ArrayList;
 
@@ -19,13 +19,14 @@ public class AddAPackage {
 	}
 	
 	
-	public void fn_addPackageDetails(String noOfNights) throws Exception{
+	public String fn_addPackageDetails(String noOfNights) throws Exception{
 		try{
 		pkgName=GenericMethods.GI().generateRandomString();
 		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddAPackage_PackageName_ED"), pkgName);
 		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddAPackage_ShortName_ED"), pkgName);
 		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddAPackage_LengthOfStay_ED"), noOfNights);
 		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddAPackage_Description_ED"), pkgName);
+		return pkgName;
 		}catch(Exception e){
 			throw e;
 		}		
@@ -46,8 +47,8 @@ public class AddAPackage {
 		try{
 		ArrayList<String> arr=new ArrayList<String>();
 		int count=GenericMethods.GI().fn_GetListWebElement("A_AddAPackage_Inclusion_TrCount").size();
-		for(int i=1;i<count;i++){
-			String str=GenericMethods.GI().driver.findElement(By.xpath("//form[@id='frmEditView']//tr[7]//tbody[1]//tr["+i+"]//td[2]")).getText();
+		for(int i=2;i<count;i++){
+			String str=GenericMethods.GI().driver.findElement(By.xpath("//td[@class='padingtd']//tr//table[@class='inclusion_tbl']//tr["+i+"]//td[2]")).getText();
 			arr.add(str.split("\n")[0]);			
 		}
 		return arr;
