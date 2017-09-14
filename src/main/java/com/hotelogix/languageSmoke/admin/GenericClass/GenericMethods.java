@@ -18,6 +18,7 @@ import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -39,7 +40,11 @@ public class GenericMethods {
 	
 	private static final String CHAR_LIST ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static final int RANDOM_STRING_LENGTH =5;
-
+    public String Roomtype;
+	
+	
+	
+	
 	
       private GenericMethods(){
     	  
@@ -73,10 +78,7 @@ public class GenericMethods {
     	  return OR;
       }
       
-      
-      
-      
-      
+
       
       public void switchToWindowHandle(String titleval) throws Exception {
       	try{
@@ -86,7 +88,7 @@ public class GenericMethods {
               String hndlval=itHandleColls.next();
               driver.switchTo().window(hndlval);
               String title=driver.getTitle();
-              if(title.equalsIgnoreCase(titleval)){
+              if(title.contains(titleval)){
                  break;
               }
               }
@@ -144,6 +146,9 @@ public class GenericMethods {
     	  try{
     		  WebElement wobj=fn_ValidateWebelement(we);
     		  wobj.click();
+    	  }catch(WebDriverException e){
+    		  Thread.sleep(2000);
+    		  js_Click(we);
     	  }catch(Exception e){
     		  throw e;
     	  }
@@ -227,6 +232,7 @@ public class GenericMethods {
 	    	 WebElement wobj=fn_ValidateWebelement(ele);
 			 Select sel = new Select(wobj);
 	         sel.selectByIndex(ind);
+	          Roomtype=sel.getFirstSelectedOption().getText();
 	         return sel;
 	        }catch(Exception e){
 		      throw e;
@@ -277,7 +283,7 @@ public class GenericMethods {
 	
     public By getLocator(String ORElementName){
 		//OR=loadOR();
-		String orLocatorInfo=OR.getProperty(ORElementName);
+		String orLocatorInfo=OR.getProperty(ORElementName).trim();
 		String locatorValue=orLocatorInfo.split("##")[0];
 		String locatorType=orLocatorInfo.split("##")[1];
 		By byObj=null;

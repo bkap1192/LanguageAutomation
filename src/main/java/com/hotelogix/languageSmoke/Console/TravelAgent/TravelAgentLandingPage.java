@@ -1,0 +1,29 @@
+package com.hotelogix.languageSmoke.Console.TravelAgent;
+
+import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
+
+public class TravelAgentLandingPage {
+
+	
+	
+	public String TAname;
+	
+	
+	
+	
+
+    public void fn_CheckAndCreateTravelAgent(String travelagentname, String noentryfounttx) throws Exception{
+   	 try{
+   		 String str=GenericMethods.GI().getWebElement("F_TravelAgentLandingPage_First_Tr").getText().trim();
+   		 if(str.equalsIgnoreCase(noentryfounttx.trim())){
+   			 GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_TravelAgentLandingPage_AddATravelAgent"));
+   			  AddaTravelAgentPage.class.newInstance().fn_CreateTravelAgent(travelagentname);
+   		 }
+   		TAname=GenericMethods.GI().getWebElement("F_TravelAgentLandingPage_FirstTAName_TX").getText().trim();
+   	 }catch(Exception e){
+   		 throw e;
+   	 }
+    }
+    
+    
+}

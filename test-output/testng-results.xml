@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="147130" started-at="2017-08-21T09:22:29Z" finished-at="2017-08-21T09:24:56Z">
+  <suite name="Default suite" duration-ms="108387" started-at="2017-09-13T11:13:36Z" finished-at="2017-09-13T11:15:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="147130" started-at="2017-08-21T09:22:29Z" finished-at="2017-08-21T09:24:56Z">
+    <test name="Default test" duration-ms="108387" started-at="2017-09-13T11:13:36Z" finished-at="2017-09-13T11:15:24Z">
       <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
-        <test-method status="PASS" signature="fn_LoadOR()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@19f7cdf]" name="fn_LoadOR" is-config="true" duration-ms="151" started-at="2017-08-21T14:52:29Z" finished-at="2017-08-21T14:52:29Z">
+        <test-method status="PASS" signature="fn_LoadOR()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@7fa833]" name="fn_LoadOR" is-config="true" duration-ms="14" started-at="2017-09-13T16:43:36Z" finished-at="2017-09-13T16:43:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_LoadOR -->
-        <test-method status="PASS" signature="fn_Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@19f7cdf]" name="fn_Login" is-config="true" duration-ms="147105" started-at="2017-08-21T14:52:29Z" finished-at="2017-08-21T14:54:56Z">
+        <test-method status="PASS" signature="fn_Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@7fa833]" name="fn_Login" is-config="true" duration-ms="80162" started-at="2017-09-13T16:43:36Z" finished-at="2017-09-13T16:44:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_Login -->
-        <test-method status="PASS" signature="fn_Test()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@19f7cdf]" name="fn_Test" duration-ms="14" started-at="2017-08-21T14:54:56Z" finished-at="2017-08-21T14:54:56Z">
+        <test-method status="PASS" signature="fn_ClickAndVerifyRestaurantLink()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@7fa833]" name="fn_ClickAndVerifyRestaurantLink" duration-ms="28200" started-at="2017-09-13T16:44:56Z" description="Clicked on Restaurant link and verifyed." finished-at="2017-09-13T16:45:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_Test -->
+        </test-method> <!-- fn_ClickAndVerifyRestaurantLink -->
       </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

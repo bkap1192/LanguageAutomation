@@ -6,7 +6,7 @@
       <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
         <methods>
           <include name="fn_Login"/>
-          <include name="fn_Test"/>
+          <include name="fn_Make1RoomReservationWithSingleLink"/>
           <include name="fn_LoadOR"/>
         </methods>
       </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->

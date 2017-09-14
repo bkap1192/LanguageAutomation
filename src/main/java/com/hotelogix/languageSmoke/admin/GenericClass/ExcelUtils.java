@@ -60,7 +60,7 @@ public class ExcelUtils {
 		 int rowNumber=getTDRowNumber(sheetObj, TCID);
 		    Row reqRowObj=sheetObj.getRow(rowNumber);
 		    int cellCount=reqRowObj.getLastCellNum()-1;
-		    for(int i=2; i<=cellCount-1; i+=2){
+		    for(int i=2; i<=cellCount; i+=2){
 		    	Cell cellObj=reqRowObj.getCell(i, Row.CREATE_NULL_AS_BLANK);
 		    	String dataKey=cellObj.getStringCellValue();
 		    	cellObj=reqRowObj.getCell(i+1, Row.CREATE_NULL_AS_BLANK);
