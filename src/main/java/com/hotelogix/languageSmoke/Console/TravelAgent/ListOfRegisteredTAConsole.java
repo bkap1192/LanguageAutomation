@@ -2,14 +2,20 @@ package com.hotelogix.languageSmoke.Console.TravelAgent;
 
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 
-public class TravelAgentLandingPage {
+public class ListOfRegisteredTAConsole {
 
 	
 	
 	public String TAname;
 	
 	
-	
+	public void fn_clkAddTALnk() throws Exception{
+		try{
+		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_CListOfRegisteredTravelAgents_AddTravelAgent"));
+		}catch(Exception e){
+			throw e;
+		}
+	}
 	
 
     public void fn_CheckAndCreateTravelAgent(String travelagentname, String noentryfounttx) throws Exception{

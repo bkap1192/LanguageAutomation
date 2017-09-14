@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
-import com.hotelogix.languageSmoke.Console.TravelAgent.TravelAgentLandingPage;
+import com.hotelogix.languageSmoke.Console.TravelAgent.ListOfRegisteredTAConsole;
 import com.hotelogix.languageSmoke.Frontdesk.CashCounterPage;
 import com.hotelogix.languageSmoke.Frontdesk.ContinueTrialPage;
 import com.hotelogix.languageSmoke.Frontdesk.FrontdeskLandingPage;
@@ -113,7 +113,7 @@ public class FrontdeskTest_PT {
 	       AddARoomPage.class.newInstance().fn_AddRoomWithSaveAndDuplicate();
 	       BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("F_AdminHomePage_Console_Link"), GenericMethods.GI().getWebElement("F_AdminHomePage_Console_Link"));
 	       String TAname=GenericMethods.GI().generateRandomString();
-	       TravelAgentLandingPage TAL= new TravelAgentLandingPage();
+	       ListOfRegisteredTAConsole TAL= new ListOfRegisteredTAConsole();
 	       TAL.fn_CheckAndCreateTravelAgent(TAname, HM.get("NoEntryFound_TX"));  
 	       Thread.sleep(3000);
 	       GenericMethods.GI().switchToWindowHandle(HM.get("Frontdesk_Title"));
