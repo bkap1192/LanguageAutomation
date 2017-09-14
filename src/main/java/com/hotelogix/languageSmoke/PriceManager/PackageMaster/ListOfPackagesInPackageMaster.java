@@ -1,4 +1,4 @@
-package com.hotelogix.languageSmoke.PriceManager;
+package com.hotelogix.languageSmoke.PriceManager.PackageMaster;
 
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;

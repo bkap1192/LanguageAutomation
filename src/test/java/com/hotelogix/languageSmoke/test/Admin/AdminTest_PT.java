@@ -12,20 +12,22 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.hotelogix.languageSmoke.BaseUtils.AttachPackage;
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
+import com.hotelogix.languageSmoke.CommonClasses.AttachPackage;
+import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
+import com.hotelogix.languageSmoke.General.DefaultSettings.DefaultSettingsPage;
 import com.hotelogix.languageSmoke.LoginPage.LoginClass;
-import com.hotelogix.languageSmoke.PriceManager.AddAPackage;
-import com.hotelogix.languageSmoke.PriceManager.AddInclusions;
-import com.hotelogix.languageSmoke.PriceManager.ListOfCorporatePackages;
-import com.hotelogix.languageSmoke.PriceManager.ListOfFrontdeskPackages;
-import com.hotelogix.languageSmoke.PriceManager.ListOfPackagesInPackageMaster;
-import com.hotelogix.languageSmoke.PriceManager.ListOfRegisteredCorporates;
-import com.hotelogix.languageSmoke.PriceManager.ListOfRegisteredTravelAgents;
-import com.hotelogix.languageSmoke.PriceManager.ListOfTAPackages;
-import com.hotelogix.languageSmoke.PriceManager.ListOfWebPackages;
 import com.hotelogix.languageSmoke.PriceManager.AddOnsInclusions.AddAddOnsPage;
 import com.hotelogix.languageSmoke.PriceManager.AddOnsInclusions.AddOnsListLandingPage;
+import com.hotelogix.languageSmoke.PriceManager.CorporatePackages.ListOfCorporatePackages;
+import com.hotelogix.languageSmoke.PriceManager.CorporatePackages.ListOfRegisteredCorporates;
+import com.hotelogix.languageSmoke.PriceManager.FrontdeskPackages.ListOfFrontdeskPackages;
+import com.hotelogix.languageSmoke.PriceManager.PackageMaster.AddAPackage;
+import com.hotelogix.languageSmoke.PriceManager.PackageMaster.AddInclusions;
+import com.hotelogix.languageSmoke.PriceManager.PackageMaster.ListOfPackagesInPackageMaster;
+import com.hotelogix.languageSmoke.PriceManager.TAPackages.ListOfRegisteredTravelAgents;
+import com.hotelogix.languageSmoke.PriceManager.TAPackages.ListOfTAPackages;
+import com.hotelogix.languageSmoke.PriceManager.WebPackages.ListOfWebPackages;
 import com.hotelogix.languageSmoke.RoomManager.Amenities.AddAmenity;
 import com.hotelogix.languageSmoke.RoomManager.Amenities.AmenitiesListLandingPage;
 import com.hotelogix.languageSmoke.RoomManager.RoomTaxes.AddRoomTax;
@@ -291,10 +293,207 @@ public class AdminTest_PT {
 		}catch(Throwable e){
 			throw e;
 		}
-
-        
-        
+               
 	}
+	
+	
+	
+	//@Test(priority=8,description="Attaching a master package to Frontdesk Packages.This attached package is then configured and activated forever.")
+			public void fn_verifyPkgAttachmentToFrontdesk() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_PackagesMaster"));
+		        ListOfPackagesInPackageMaster LOPM=new ListOfPackagesInPackageMaster();
+		        LOPM.fn_clkAddAPackageLnk();
+		        AddAPackage AAP=new AddAPackage();
+		        String pkgName=AAP.fn_addPackageDetails("1");
+		        AAP.fn_clkSaveBtn();
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_FrontdeskPackage"));
+		        ListOfFrontdeskPackages LOFP=new ListOfFrontdeskPackages();
+		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("FrontdeskPackages_Title"));
+		        BasePage.AHP().fn_clkAttachPkgLink();
+		        AttachPackage AP=new AttachPackage();
+		        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
+		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("AttachPackage_Title"));
+		        AP.fn_getAttachedPkgName(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Recepção)");
+		        String text=LOFP.fn_getMessageText();
+		        VerifyUtils.VU().fn_AsserEquals(text, HM.get("AttachPackage_Msg"));
+		        BasePage.AHP().fn_viewAll();
+		        ArrayList<String> arr=BasePage.AHP().fn_GetPkg();
+		        VerifyUtils.VU().fn_AssertContainsInArray(arr, pkgName);
+		        LOFP.fn_verifyPkgStatus(pkgName, HM.get("Status_src"));
+		        LOFP.fn_confgrAttachedPkg(pkgName);
+		        PackageDetail PD=new PackageDetail();
+		        PD.fn_clkSaveBtn();
+		        String actLnk=LOFP.fn_getActivationDateLink(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(actLnk, HM.get("AddActivation_Link"));
+		        LOFP.fn_clkAddActiLink(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Adicionar data de ativação");
+		        String msg=BasePage.AHP().fn_addActivationDate();
+		        VerifyUtils.VU().fn_AsserEquals(msg, HM.get("Message_Text1")+"\n"+" "+HM.get("Message_Text2"));
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Recepção)");
+		        String actForev=LOFP.fn_getActivatedForeverText(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(actForev, HM.get("ActivatedForever_Text"));
+				}catch(Throwable e){
+					throw e;
+				}
+			}
+			
+			
+			//@Test(priority=9,description="Attaching a master package to Web Packages.This attached package is then configured and activated forever.")
+			public void fn_verifyPkgAttachmentToWeb() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_PackagesMaster"));
+		        ListOfPackagesInPackageMaster LOPM=new ListOfPackagesInPackageMaster();
+		        LOPM.fn_clkAddAPackageLnk();
+		        AddAPackage AAP=new AddAPackage();
+		        String pkgName=AAP.fn_addPackageDetails("1");
+		        AAP.fn_clkSaveBtn();
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_WebPackage"));
+		        ListOfWebPackages LOWP=new ListOfWebPackages();
+				VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("WebPackages_Title"));
+		        BasePage.AHP().fn_clkAttachPkgLink();
+		        AttachPackage AP=new AttachPackage();
+		        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
+		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("AttachPackage_Title"));
+		        AP.fn_getAttachedPkgName(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Internet)");
+		        String text=LOWP.fn_getMessageText();
+		        VerifyUtils.VU().fn_AsserEquals(text, HM.get("AttachPackage_Msg"));
+		        BasePage.AHP().fn_viewAll();
+		        ArrayList<String> arr=BasePage.AHP().fn_GetPkg();
+		        VerifyUtils.VU().fn_AssertContainsInArray(arr, pkgName);
+		        LOWP.fn_verifyPkgStatus(pkgName, HM.get("Status_src"));
+		        LOWP.fn_confgrAttachedPkg(pkgName);
+		        PackageDetail PD=new PackageDetail();
+		        PD.fn_clkSaveBtn();
+		        String actLnk=LOWP.fn_getActivationDateLink(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(actLnk, HM.get("AddActivation_Link"));
+		        LOWP.fn_clkAddActiLink(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Adicionar data de ativação");
+		        String msg=BasePage.AHP().fn_addActivationDate();
+		        VerifyUtils.VU().fn_AsserEquals(msg, HM.get("Message_Text1")+"\n"+" "+HM.get("Message_Text2"));
+		        Thread.sleep(5000);
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Internet)");
+		        String actForev=LOWP.fn_getActivatedForeverText(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(actForev, HM.get("ActivatedForever_Text"));
+				}catch(Throwable e){
+					throw e;
+				}        
+			}
+			
+			
+			//@Test(priority=10,description="Verify 'Publish to Grid' and 'Save As Grid' functionality for Frontdesk Package.")
+			public void fn_verifyPublishToGridAndSaveFrontdeskPkg() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_PackagesMaster"));
+		        ListOfPackagesInPackageMaster LOPM=new ListOfPackagesInPackageMaster();
+		        LOPM.fn_clkAddAPackageLnk();
+		        AddAPackage AAP=new AddAPackage();
+		        String pkgName=AAP.fn_addPackageDetails("1");
+		        AAP.fn_clkSaveBtn();
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"),GenericMethods.GI().getWebElement("A_AdminHomePage_FrontdeskPackage"));
+		        ListOfFrontdeskPackages LOFP=new ListOfFrontdeskPackages();
+		        BasePage.AHP().fn_clkAttachPkgLink();
+		        AttachPackage AP=new AttachPackage();
+		        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
+		        AP.fn_getAttachedPkgName(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Recepção)");
+		        BasePage.AHP().fn_viewAll();
+		        LOFP.fn_confgrAttachedPkg(pkgName);
+		        PackageDetail PD=new PackageDetail();
+		        PD.fn_clkSaveBtn();
+		        LOFP.fn_clkAddActiLink(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Adicionar data de ativação");
+		        BasePage.AHP().fn_addActivationDate();
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Recepção)");
+		        Thread.sleep(4000);
+		        LOFP.fn_clkEditLnk(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("EditPackageDetailFD_Title"));
+		        String text=PD.fn_clkToGridBtn();
+		        VerifyUtils.VU().fn_AsserEquals(text, HM.get("ToGrid_Msg1")+"\n"+" "+HM.get("ToGrid_Msg2"));
+		        String sMsg=PD.fn_getSaveMsg();
+		        VerifyUtils.VU().fn_AsserEquals(sMsg, HM.get("SaveMsg_Text1")+pkgName+HM.get("SaveMsg_Text2"));
+		        String saveGrid=PD.fn_clkSaveAsGridBtn();
+		        VerifyUtils.VU().fn_AsserEquals(saveGrid, HM.get("SaveAsGrid_Msg1")+"\n"+HM.get("SaveAsGrid_Msg2"));
+		        GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_PackageDetail_ListOfFrontdeskPackage_Link"));
+		        String gridPkg=LOFP.fn_getGridPkg(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(gridPkg, pkgName.concat(" [GRID]"));
+				}catch(Throwable e){
+					throw e;
+				}
+			}
+			
+			
+			//@Test(priority=11,description="Verify 'Publish to Grid' and 'Save As Grid' functionality for Web Package.")
+			public void fn_verifyPublishToGridAndSaveWebPkg() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_PackagesMaster"));
+		        ListOfPackagesInPackageMaster LOPM=new ListOfPackagesInPackageMaster();
+		        LOPM.fn_clkAddAPackageLnk();
+		        AddAPackage AAP=new AddAPackage();
+		        String pkgName=AAP.fn_addPackageDetails("1");
+		        AAP.fn_clkSaveBtn();
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"),GenericMethods.GI().getWebElement("A_AdminHomePage_WebPackage"));
+		        ListOfWebPackages LOWP=new ListOfWebPackages();
+		        BasePage.AHP().fn_clkAttachPkgLink();
+		        AttachPackage AP=new AttachPackage();
+		        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
+		        AP.fn_getAttachedPkgName(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Internet)");
+		        BasePage.AHP().fn_viewAll();
+		        LOWP.fn_confgrAttachedPkg(pkgName);
+		        PackageDetail PD=new PackageDetail();
+		        PD.fn_clkSaveBtn();
+		        LOWP.fn_clkAddActiLink(pkgName);
+		        GenericMethods.GI().switchToWindowHandle("Adicionar data de ativação");
+		        BasePage.AHP().fn_addActivationDate();
+		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Internet)");
+		        LOWP.fn_clkEditLnk(pkgName);
+		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("EditPackageDetailWeb_Title"));
+		        PD.fn_clkToGridBtn();
+				}catch(Throwable e){
+					throw e;
+				}        
+			}
+			
+			
+			
+			//@Test(priority=12,description="Change and verify Night Audit time,Check-in time,Check-out time,Early Checkout Charge in Default Settings.")
+			public void fn_verifySaveChangesInDefaultSettings() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_General"), GenericMethods.GI().getWebElement("A_AdminHomePage_DefaultSetting"));    
+				DefaultSettingsPage DSP=new DefaultSettingsPage();
+				VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("DefaultSettings_Title"));
+				DSP.fn_changeNATime("02", "00", "AM", "Próxima data do calendário");
+				DSP.fn_changeCheckinTime("12", "00", "AM");
+				DSP.fn_changeCheckoutTime("12", "00", "PM");
+				DSP.fn_changeEarlycheckoutCharge();
+				String policy=DSP.fn_getEarlyCheckoutPolicy();
+				VerifyUtils.VU().fn_AssertContains(policy, DSP.i);
+				String str=DSP.fn_getSaveMsg();
+				VerifyUtils.VU().fn_AsserEquals(str, HM.get("SaveMsg_Text"));
+				}catch(Throwable e){
+					throw e;
+				}
+			}
+			
+			
+			
+			@Test(priority=13,description="Creation of 'Pay Type' and verify its status.")
+			public void fn_verifyAdditionOfPayTypes(){
+				
+			}
 	
 	
 	@AfterMethod
