@@ -257,7 +257,9 @@ public class GenericMethods {
 			String CP = System.getProperty("user.dir");
 			if(OR==null){
 				System.getProperty(P_PropertiesPath);
+
 				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_PT.properties");
+
 				OR=new Properties();
 				OR.load(fis);
 				return OR;

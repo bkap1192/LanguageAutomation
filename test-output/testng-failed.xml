@@ -5,10 +5,17 @@
     <classes>
       <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
         <methods>
+<<<<<<< HEAD
           <include name="fn_Login"/>
           <include name="fn_Close"/>
           <include name="fn_Make1RoomReservationWithTravelAgentLink"/>
           <include name="fn_LoadOR"/>
+=======
+          <include name="Login"/>
+          <include name="fn_Beforeclass"/>
+          <include name="fn_verifyAddAPackageWithInclusion"/>
+          <include name="fn_close"/>
+>>>>>>> barkha
         </methods>
       </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
     </classes>

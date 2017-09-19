@@ -14,8 +14,13 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
+
 import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
 import com.hotelogix.languageSmoke.Console.RegisteredTravelAgents.ListOfRegisteredTAConsole;
+
+
+
+
 import com.hotelogix.languageSmoke.Frontdesk.CashCounterPage;
 import com.hotelogix.languageSmoke.Frontdesk.CheckInCardPage;
 import com.hotelogix.languageSmoke.Frontdesk.ContinueTrialPage;

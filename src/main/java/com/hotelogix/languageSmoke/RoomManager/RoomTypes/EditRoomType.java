@@ -36,6 +36,8 @@ public class EditRoomType {
 	public String fn_attachRoomTax(String value) throws Exception{
 		try{
 		roomType=GenericMethods.GI().getWebElement("A_EditRoomTypePage_RoomTypeName_ED").getAttribute("value");
+		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_EditRoomTypePage_ShortName"), GenericMethods.GI().generateRandomString());
+		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_EditRoomTypePage_Description"), GenericMethods.GI().generateRandomString());
 		int count=GenericMethods.GI().fn_GetListWebElement("A_AddRoomType_CheckBox_Count").size();
         for(int i=1;i<=count;i++){
             String str=GenericMethods.GI().driver.findElement(By.xpath("//td[@class='padingtd']/table/tbody//tr[17]//td[2]//tr["+i+"]//td//table//tr[1]/td")).getText();
