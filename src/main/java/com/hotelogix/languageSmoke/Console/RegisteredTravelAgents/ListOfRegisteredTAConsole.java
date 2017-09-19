@@ -1,8 +1,8 @@
-package com.hotelogix.languageSmoke.Console.TravelAgent;
+package com.hotelogix.languageSmoke.Console.RegisteredTravelAgents;
 
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 
-public class TravelAgentLandingPage {
+public class ListOfRegisteredTAConsole {
 
 	
 	
