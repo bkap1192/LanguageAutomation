@@ -7,7 +7,8 @@
         <methods>
 <<<<<<< HEAD
           <include name="fn_Login"/>
-          <include name="fn_Make1RoomReservationWithSingleLink"/>
+          <include name="fn_Close"/>
+          <include name="fn_Make1RoomReservationWithTravelAgentLink"/>
           <include name="fn_LoadOR"/>
 =======
           <include name="Login"/>

@@ -34,7 +34,7 @@ public class AttachPackage {
 			String str=GenericMethods.GI().driver.findElement(By.xpath("//table[@class='poptable']/tbody/tr["+i+"]//td[4]")).getText();
 			int k=str.indexOf("(");
 			attachedPkg=str.substring(0, k).trim();
-			if(attachedPkg.equals(pkgName)){
+			if(attachedPkg.contains(pkgName)){
 				GenericMethods.GI().driver.findElement(By.xpath("//table[@class='poptable']/tbody/tr["+i+"]//td[2]/input")).click();
 				break;
 			}
