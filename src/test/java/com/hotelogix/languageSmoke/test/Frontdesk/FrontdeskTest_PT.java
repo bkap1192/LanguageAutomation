@@ -1,31 +1,17 @@
 package com.hotelogix.languageSmoke.test.Frontdesk;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
-
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
-
-
-
-
 import com.hotelogix.languageSmoke.Console.RegisteredTravelAgent.ListOfRegisteredTAConsole;
-
-
 import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
-
-
-import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
-
 import com.hotelogix.languageSmoke.Frontdesk.CashCounterPage;
 import com.hotelogix.languageSmoke.Frontdesk.CheckInCardPage;
 import com.hotelogix.languageSmoke.Frontdesk.ContinueTrialPage;
@@ -39,7 +25,7 @@ import com.hotelogix.languageSmoke.RoomManager.Rooms.RoomsListLandingPage;
 import com.hotelogix.languageSmoke.admin.GenericClass.ExcelUtils;
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
-import com.hotelogix.languageSmoke.test.Admin.AdminTest_PT;
+
 
 public class FrontdeskTest_PT {
 
