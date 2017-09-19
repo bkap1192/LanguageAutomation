@@ -12,7 +12,7 @@ public class AddAPackage {
 	
 	public void fn_clkAddInclLink() throws Exception{
 		try{
-		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddAPackage_AddInclusion-Link"));
+		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddAPackage_AddInclusion_Link"));
 		}catch(Exception e){
 			throw e;
 		}
@@ -47,7 +47,7 @@ public class AddAPackage {
 		try{
 		ArrayList<String> arr=new ArrayList<String>();
 		int count=GenericMethods.GI().fn_GetListWebElement("A_AddAPackage_Inclusion_TrCount").size();
-		for(int i=2;i<count;i++){
+		for(int i=2;i<count-4;i++){
 			String str=GenericMethods.GI().driver.findElement(By.xpath("//td[@class='padingtd']//tr//table[@class='inclusion_tbl']//tr["+i+"]//td[2]")).getText();
 			arr.add(str.split("\n")[0]);			
 		}

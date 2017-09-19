@@ -10,7 +10,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
-import com.hotelogix.languageSmoke.Console.TravelAgent.ListOfRegisteredTAConsole;
+
+
+import com.hotelogix.languageSmoke.Console.RegisteredTravelAgent.ListOfRegisteredTAConsole;
+
 import com.hotelogix.languageSmoke.Frontdesk.CashCounterPage;
 import com.hotelogix.languageSmoke.Frontdesk.ContinueTrialPage;
 import com.hotelogix.languageSmoke.Frontdesk.FrontdeskLandingPage;

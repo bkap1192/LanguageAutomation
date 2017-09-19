@@ -6,7 +6,13 @@
     
   <test name="Test">
     <classes>
+<<<<<<< HEAD
      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT"/>   
+=======
+    <!--   <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT"/>   -->
+          <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT"/>   
+     
+>>>>>>> barkha
        </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
