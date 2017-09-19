@@ -35,6 +35,27 @@ public class AddARoomPage {
 		}catch(Exception e){
 			throw e;
 		}				
+	    }
+	
+	public void fn_AddRoomWithSaveAndDuplicate() throws Exception{
+		try{
+			String room=GenericMethods.GI().randomUniqueString();
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddARoomPage_RoomNameNumber_ED"), room);
+			GenericMethods.GI().SelectByIndex(GenericMethods.GI().getWebElement("A_AddARoomPage_RoomType_DD"), 1);
+			GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_AddRoomPage_SaveAndDuplicate_BT"));
+			String room1=GenericMethods.GI().randomUniqueString();
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddARoomPage_RoomNameNumber_ED"), room1);
+			GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddARoomPage_Save_BTN"));
+		}catch(Exception e){
+			throw e;
+		}
+		
+		
+		
+		
 	}
+	
+	
+	
 	
 }

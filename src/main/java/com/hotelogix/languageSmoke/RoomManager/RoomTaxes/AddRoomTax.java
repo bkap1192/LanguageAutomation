@@ -33,8 +33,9 @@ public class AddRoomTax {
 		fn_addAccountcode();
 		Thread.sleep(2000);
 		GenericMethods.GI().SelectByIndex(GenericMethods.GI().getWebElement("A_AddRoomTax_AccountCode_DD"), 1);
+		Thread.sleep(1000);
 		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddRoomTax_AccountDescription_ED"), taxTitle);
-		GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("A_AddRoomtax_TaxAmt_ED"), value);
+		GenericMethods.GI().js_Sendkey(GenericMethods.GI().getWebElement("A_AddRoomtax_TaxAmt_ED"), value);
 		GenericMethods.GI().SelectByIndex(GenericMethods.GI().getWebElement("A_AddRoomTax_TaxType_DD"), 2);
 		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddRoomTax_SaveTax_BTN"));
 		}catch(Exception e){

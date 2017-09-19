@@ -1,6 +1,8 @@
 package com.hotelogix.languageSmoke.admin.GenericClass;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
@@ -16,6 +18,7 @@ import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -23,6 +26,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 
 public class GenericMethods {
 
@@ -30,13 +34,17 @@ public class GenericMethods {
 	public WebDriver driver;
 	private static GenericMethods GM;
 	
-	private String P_PropertiesPath="D:\\LanguageTest\\LanguageAutomation\\Admin_PT.properties";
+	private String P_PropertiesPath="./LanguageAutomation/Admin_PT.properties";
 	private String S_PropertiesPath="D:\\SpanishSmoke\\LanguagesAutomation\\Spanish.properties";
 	
 	
 	private static final String CHAR_LIST ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static final int RANDOM_STRING_LENGTH =5;
-
+    public String Roomtype;
+	
+	
+	
+	
 	
       private GenericMethods(){
     	  
@@ -60,6 +68,18 @@ public class GenericMethods {
       }
       
       
+ 
+      public Properties fn_loadpro() throws Exception{
+    	  Properties pro=new Properties();
+    	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+"Frontdesk_PT.properties");
+    	  pro.load(fis);
+    	  OR=loadOR();
+          OR.putAll(pro);
+    	  return OR;
+      }
+      
+
+      
       public void switchToWindowHandle(String titleval) throws Exception {
       	try{
       	  Set<String> setHndlValColls=driver.getWindowHandles();
@@ -68,7 +88,7 @@ public class GenericMethods {
               String hndlval=itHandleColls.next();
               driver.switchTo().window(hndlval);
               String title=driver.getTitle();
-              if(title.equalsIgnoreCase(titleval)){
+              if(title.contains(titleval)){
                  break;
               }
               }
@@ -126,6 +146,9 @@ public class GenericMethods {
     	  try{
     		  WebElement wobj=fn_ValidateWebelement(we);
     		  wobj.click();
+    	  }catch(WebDriverException e){
+    		  Thread.sleep(2000);
+    		  js_Click(we);
     	  }catch(Exception e){
     		  throw e;
     	  }
@@ -209,16 +232,32 @@ public class GenericMethods {
 	    	 WebElement wobj=fn_ValidateWebelement(ele);
 			 Select sel = new Select(wobj);
 	         sel.selectByIndex(ind);
+	          Roomtype=sel.getFirstSelectedOption().getText();
 	         return sel;
 	        }catch(Exception e){
 		      throw e;
 	         }
 	        }
 	
-	public Properties loadOR(){
+	public Properties loadOR(String path){
+		Properties ORF=null;
 		try {
+				FileInputStream fis=new FileInputStream(path);
+				 ORF=new Properties();
+				ORF.load(fis);
+				return ORF;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		      return ORF;
+	        }
+	
+	private Properties loadOR(){
+		try {
+			String CP = System.getProperty("user.dir");
 			if(OR==null){
-				FileInputStream fis=new FileInputStream(P_PropertiesPath);
+				System.getProperty(P_PropertiesPath);
+				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_SP.properties");
 				OR=new Properties();
 				OR.load(fis);
 				return OR;
@@ -243,8 +282,8 @@ public class GenericMethods {
 	}
 	
     public By getLocator(String ORElementName){
-		OR=loadOR();
-		String orLocatorInfo=OR.getProperty(ORElementName);
+		//OR=loadOR();
+		String orLocatorInfo=OR.getProperty(ORElementName).trim();
 		String locatorValue=orLocatorInfo.split("##")[0];
 		String locatorType=orLocatorInfo.split("##")[1];
 		By byObj=null;

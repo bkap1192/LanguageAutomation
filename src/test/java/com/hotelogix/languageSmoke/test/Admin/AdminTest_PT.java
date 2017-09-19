@@ -1,11 +1,14 @@
 package com.hotelogix.languageSmoke.test.Admin;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -43,34 +46,44 @@ import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
 public class AdminTest_PT {
 
 	private HashMap<String ,String> HM;
-	private String sheetname="Admin_SZ_Portuguese";
+	//private String sheet_P="Admin_Portuguese";
+	private String sheet_S="Admin_Spanish";
+
+	private Properties OR;
+	private String propertiesfile="Config.properties";                          
+
 	private String Path="D://LanguageTest//LanguageAutomation//TestData//LanguagesTestData.xlsx";
+
 	
-	                          
+	
+	@BeforeClass
+	public void fn_Beforeclass() throws Exception{
+		String sys=System.getProperty("user.dir");
+		OR=GenericMethods.GI().loadOR(sys+File.separator+propertiesfile);
+		GenericMethods.GI().fn_loadpro();
+		
+	}
 	
 	
 	@BeforeMethod
 	public void Login() throws Exception{
 		try{
-			GenericMethods.GI().fn_LaunchBrowser("FF", "http://hotelogix.stayezee.com/admine/login/login/");
-		
-			new LoginClass().fn_LoginHotel(GenericMethods.GI().loadOR().getProperty("Hotel_ID"), GenericMethods.GI().loadOR().getProperty("UserName"), GenericMethods.GI().loadOR().getProperty("Password"));
-		
+			GenericMethods.GI().fn_LaunchBrowser("FF", OR.getProperty("URL_Admin_SG"));
+			new LoginClass().fn_LoginHotel(OR.getProperty("HotelID_Admin_SG_SP"), OR.getProperty("UserName_Admin_SG_SP"), OR.getProperty("Password_Admin_SG_SP"));
 		}catch(Exception e){
 			throw e;
 		}
 	    }
 	
-	
-	//@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
+
+	@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
 	public void fn_verifyAdmineConsoleSuccessfulLogin() throws Exception{
 		try{
 			String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-			HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+			HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
 			VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("Adminstrator_Title"));		
 		}catch(Exception e){
 			throw e;
-			
 		}finally {
 			
 		}
@@ -78,14 +91,14 @@ public class AdminTest_PT {
 	
 	
 
-	//@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
+	@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
 	public void fn_verifyAdditionOfAmenity() throws Exception{
 		try{
 		
 			String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
 //			HMM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname);
 //			HM=HMM.get(methodname);
-			HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+			HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
 			BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_Amenities"));			
 		    AmenitiesListLandingPage ALP=new AmenitiesListLandingPage();
 			VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("AmentitiesList_Title"));
@@ -104,17 +117,18 @@ public class AdminTest_PT {
 		    EditRoomType ERT=new EditRoomType();
 		    ArrayList<String> arr1=ERT.fn_getAmenities();
 		    VerifyUtils.VU().fn_AssertContainsInArray(arr1, AA.amenityName);		    		    
+
 		}catch(Exception e){
 			throw e;
 		}
 	    }
 	
 	
-	//@Test(priority=3,description="Added Room is displayed on 'Rooms List' page with status as active(green tick)")
+	@Test(priority=3,description="Added Room is displayed on 'Rooms List' page with status as active(green tick)")
 	public void fn_verifyAdditionOfRoom() throws Throwable{
 	try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_Rooms"));
         RoomsListLandingPage RLP=new RoomsListLandingPage();
         VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("RoomsList_Title"));
@@ -133,11 +147,11 @@ public class AdminTest_PT {
 	}
 	
 	
-	//@Test(priority=4,description="On clicking 'Save and Duplicate' button on 'Add/Edit a Room',all the rooms of the same room type are displayed in ")
+	@Test(priority=4,description="On clicking 'Save and Duplicate' button on 'Add/Edit a Room',all the rooms of the same room type are displayed in ")
 	public void fn_verifySaveAndDuplicateRoomBtn() throws Throwable{
 		try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_Rooms"));
 		RoomsListLandingPage RLP=new RoomsListLandingPage();
         RLP.fn_clkAddARoom();
@@ -151,11 +165,11 @@ public class AdminTest_PT {
 	}
 	
 	
-	//@Test(priority=5,description="Creation of room tax and attaching it to a room type.")
+	@Test(priority=5,description="Creation of room tax and attaching it to a room type.")
 	public void fn_verifyRoomTaxSelectionInRoomType() throws Throwable{
 		try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_RoomsManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_RoomTax"));
         RoomTaxListPage RTP=new RoomTaxListPage();
         VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("RoomTaxList_Title"));
@@ -189,11 +203,11 @@ public class AdminTest_PT {
 	
 	
 	
-	//@Test(priority=6,description="Creation of ADD-ONS(INCLUSIONS).It gets reflected in 'Add/Edit Package' page.")
+	@Test(priority=6,description="Creation of ADD-ONS(INCLUSIONS).It gets reflected in 'Add/Edit Package' page.")
 	public void fn_verifyAdditionOfAddOns() throws Throwable{
 		try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_AddOns"));
         AddOnsListLandingPage AOP=new AddOnsListLandingPage();
         VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("AddOnsList_Title"));
@@ -228,7 +242,7 @@ public class AdminTest_PT {
 		try{
 		
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+		HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_PackagesMaster"));
         ListOfPackagesInPackageMaster LOPM=new ListOfPackagesInPackageMaster();
         LOPM.fn_clkAddAPackageLnk();
@@ -239,11 +253,12 @@ public class AdminTest_PT {
         AAP.fn_clkAddInclLink();
         AddInclusions AI=new AddInclusions();
         GenericMethods.GI().windowHandle(a);
+        Thread.sleep(5000);
         VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("AddInclusion_Title"));
         String incl= AI.fn_addInclusion();
         GenericMethods.GI().Switch_Parent_Window(a);
         ArrayList<String> l1=AAP.fn_getAddedInclList();
-        VerifyUtils.VU().fn_AssertContainsInArray(l1, incl);
+        VerifyUtils.VU().fn_AssertContainsInArray(l1, incl.split("\n")[0]);
         AAP.fn_clkSaveBtn();
         BasePage.AHP().fn_viewAll();
         ArrayList<String> l2=LOPM.fn_getPackageList(AAP.pkgName, HM.get("Status_src"));
@@ -254,30 +269,36 @@ public class AdminTest_PT {
         BasePage.AHP().fn_clkAttachPkgLink();
         AttachPackage AP=new AttachPackage();
         GenericMethods.GI().windowHandle(b);
-        AP.fn_searchPkg();
+        ArrayList<String> l3=AP.fn_searchPkg();
+        VerifyUtils.VU().fn_AssertContainsInArray(l3, AAP.pkgName);
         GenericMethods.GI().Switch_Parent_Window(b);
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_WebPackage"));
         ListOfWebPackages LOWP=new ListOfWebPackages();
         BasePage.AHP().fn_clkAttachPkgLink();
-        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
-        AP.fn_searchPkg();
-        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Internet)");
+        GenericMethods.GI().switchToWindowHandle(HM.get("AttachPkg_Title"));
+        ArrayList<String> l4=AP.fn_searchPkg();
+        VerifyUtils.VU().fn_AssertContainsInArray(l4, AAP.pkgName);
+        GenericMethods.GI().switchToWindowHandle(HM.get("WebPkg_Title"));
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_CorporatePackage"));
         ListOfRegisteredCorporates LORC=new ListOfRegisteredCorporates();
+        LORC.fn_chkCorporate(HM.get("NoEntries_Text"));
         GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddViewPackage_Link"));
         ListOfCorporatePackages LOCP=new ListOfCorporatePackages();
         BasePage.AHP().fn_clkAttachPkgLink();
-        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
-        AP.fn_searchPkg();
-        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Corporate)");
+        GenericMethods.GI().switchToWindowHandle(HM.get("AttachPkg_Title"));
+        ArrayList<String> l5=AP.fn_searchPkg();
+        VerifyUtils.VU().fn_AssertContainsInArray(l5, AAP.pkgName);
+        GenericMethods.GI().switchToWindowHandle(HM.get("CorpPkg_Title"));
         BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_TravelAgentPackage"));
         ListOfRegisteredTravelAgents LORT=new ListOfRegisteredTravelAgents();
+        LORT.fn_chkTravelAgent(HM.get("NoEntries_Text"));
         GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AddViewPackage_Link"));
         ListOfTAPackages LTAP=new ListOfTAPackages();
         BasePage.AHP().fn_clkAttachPkgLink();
-        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
-        AP.fn_searchPkg();
-        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Travel Agent)");
+        GenericMethods.GI().switchToWindowHandle(HM.get("AttachPkg_Title"));
+        ArrayList<String> l6=AP.fn_searchPkg();
+        VerifyUtils.VU().fn_AssertContainsInArray(l6, AAP.pkgName);
+        GenericMethods.GI().switchToWindowHandle(HM.get("TAPkg_Title"));
 		}catch(Throwable e){
 			throw e;
 		}
@@ -286,11 +307,11 @@ public class AdminTest_PT {
 	
 	
 	
-	//@Test(priority=8,description="Attaching a master package to Frontdesk Packages.This attached package is then configured and activated forever.")
+	        @Test(priority=8,description="Attaching a master package to Frontdesk Packages.This attached package is then configured and activated forever.")
 			public void fn_verifyPkgAttachmentToFrontdesk() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
-				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_S, methodname);
 		        BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_PackagesMaster"));
 		        ListOfPackagesInPackageMaster LOPM=new ListOfPackagesInPackageMaster();
 		        LOPM.fn_clkAddAPackageLnk();
@@ -302,10 +323,10 @@ public class AdminTest_PT {
 		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("FrontdeskPackages_Title"));
 		        BasePage.AHP().fn_clkAttachPkgLink();
 		        AttachPackage AP=new AttachPackage();
-		        GenericMethods.GI().switchToWindowHandle("Anexar pacote");
+		        GenericMethods.GI().switchToWindowHandle(HM.get("AttachPackage_Title"));
 		        VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("AttachPackage_Title"));
 		        AP.fn_getAttachedPkgName(pkgName);
-		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Recepção)");
+		        GenericMethods.GI().switchToWindowHandle(HM.get("FrontdeskPackages_Title"));
 		        String text=LOFP.fn_getMessageText();
 		        VerifyUtils.VU().fn_AsserEquals(text, HM.get("AttachPackage_Msg"));
 		        BasePage.AHP().fn_viewAll();
@@ -318,10 +339,12 @@ public class AdminTest_PT {
 		        String actLnk=LOFP.fn_getActivationDateLink(pkgName);
 		        VerifyUtils.VU().fn_AsserEquals(actLnk, HM.get("AddActivation_Link"));
 		        LOFP.fn_clkAddActiLink(pkgName);
-		        GenericMethods.GI().switchToWindowHandle("Adicionar data de ativação");
+		        GenericMethods.GI().switchToWindowHandle(HM.get("AddActivationDate_Title"));
+		        Thread.sleep(4000);
 		        String msg=BasePage.AHP().fn_addActivationDate();
 		        VerifyUtils.VU().fn_AsserEquals(msg, HM.get("Message_Text1")+"\n"+" "+HM.get("Message_Text2"));
-		        GenericMethods.GI().switchToWindowHandle("Lista de Pacotes (Recepção)");
+		        GenericMethods.GI().switchToWindowHandle(HM.get("FrontdeskPackages_Title"));
+		        Thread.sleep(4000);
 		        String actForev=LOFP.fn_getActivatedForeverText(pkgName);
 		        VerifyUtils.VU().fn_AsserEquals(actForev, HM.get("ActivatedForever_Text"));
 				}catch(Throwable e){
@@ -329,8 +352,9 @@ public class AdminTest_PT {
 				}
 			}
 			
-			
-			//@Test(priority=9,description="Attaching a master package to Web Packages.This attached package is then configured and activated forever.")
+			/*
+			 * 
+			@Test(priority=9,description="Attaching a master package to Web Packages.This attached package is then configured and activated forever.")
 			public void fn_verifyPkgAttachmentToWeb() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -375,7 +399,7 @@ public class AdminTest_PT {
 			}
 			
 			
-			//@Test(priority=10,description="Verify 'Publish to Grid' and 'Save As Grid' functionality for Frontdesk Package.")
+			@Test(priority=10,description="Verify 'Publish to Grid' and 'Save As Grid' functionality for Frontdesk Package.")
 			public void fn_verifyPublishToGridAndSaveFrontdeskPkg() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -419,7 +443,7 @@ public class AdminTest_PT {
 			}
 			
 			
-			//@Test(priority=11,description="Verify 'Publish to Grid' and 'Save As Grid' functionality for Web Package.")
+			@Test(priority=11,description="Verify 'Publish to Grid' and 'Save As Grid' functionality for Web Package.")
 			public void fn_verifyPublishToGridAndSaveWebPkg() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -455,7 +479,7 @@ public class AdminTest_PT {
 			
 			
 			
-			//@Test(priority=12,description="Change and verify Night Audit time,Check-in time,Check-out time,Early Checkout Charge in Default Settings.")
+			@Test(priority=12,description="Change and verify Night Audit time,Check-in time,Check-out time,Early Checkout Charge in Default Settings.")
 			public void fn_verifySaveChangesInDefaultSettings() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -479,10 +503,52 @@ public class AdminTest_PT {
 			
 			
 			@Test(priority=13,description="Creation of 'Pay Type' and verify its status.")
-			public void fn_verifyAdditionOfPayTypes(){
-				
+			public void fn_verifyAdditionOfPayTypes() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+                BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_General"), GenericMethods.GI().getWebElement("A_AdminHomePage_PayTypes"));
+				VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("PayTypes_Title"));
+				PayTypesList PTL=new PayTypesList();
+				PTL.fn_clkAddPayTypeLnk();
+				AddPayType APT =new AddPayType();
+				APT.fn_addPayTypeDetails();
+				String str=PTL.fn_getMsgText();
+				VerifyUtils.VU().fn_AsserEquals(str, HM.get("Message_Text1")+"`"+APT.payTypeTitle+"`"+HM.get("Message_Text2"));
+				BasePage.AHP().fn_viewAll();
+				ArrayList<String> l1=PTL.fn_getPayType(APT.payTypeTitle,HM.get("Status_src"));
+				VerifyUtils.VU().fn_AssertContainsInArray(l1, APT.payTypeTitle);;
+				}catch(Throwable e){
+					throw e;
+				}
 			}
-	
+			
+			
+			
+			@Test(priority=14,description="Creation of 'Booking Policy' and verify it.")
+	        public void fn_verifyAdditionOfBookingPolicy() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheetname, methodname);
+                BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_General"), GenericMethods.GI().getWebElement("A_AdminHomePage_BookingPolicy"));
+                VerifyUtils.VU().fn_AsserEquals(GenericMethods.GI().driver.getTitle(), HM.get("BookingPolicy_Title"));
+                BookingPolicyList BPL=new BookingPolicyList();
+                BPL.fn_clkAddBookingPolicyLnk();
+                GenericMethods.GI().switchToWindowHandle("Adicionar uma política de reserva");
+                AddBookingPolicy ABP=new AddBookingPolicy();
+                ABP.fn_addBookingPolicyDetails();
+                GenericMethods.GI().switchToWindowHandle("Apólice de reserva");
+                ArrayList<String> arr=BasePage.AHP().fn_GetAddedFields();
+                VerifyUtils.VU().fn_AssertContainsInArray(arr, ABP.BPTitle);
+				}catch(Throwable e){
+					throw e;
+				}
+			}
+	        
+	        
+	    */
+	        
+	        
 	
 	@AfterMethod
 	public void fn_close(){
