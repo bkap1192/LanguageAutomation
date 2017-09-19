@@ -307,7 +307,7 @@ public class AdminTest_PT {
 	
 	
 	
-	        @Test(priority=8,description="Attaching a master package to Frontdesk Packages.This attached package is then configured and activated forever.")
+	        @Test(priority=8,description="Attaching  master package to Frontdesk Packages.This attached package is then configured and activated forever.")
 			public void fn_verifyPkgAttachmentToFrontdesk() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
