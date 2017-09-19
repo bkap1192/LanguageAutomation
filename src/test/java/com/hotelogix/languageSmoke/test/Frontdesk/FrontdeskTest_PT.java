@@ -17,7 +17,11 @@ import com.hotelogix.languageSmoke.BaseUtils.BasePage;
 
 
 
+
 import com.hotelogix.languageSmoke.Console.RegisteredTravelAgent.ListOfRegisteredTAConsole;
+
+
+import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
 
 
 import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
