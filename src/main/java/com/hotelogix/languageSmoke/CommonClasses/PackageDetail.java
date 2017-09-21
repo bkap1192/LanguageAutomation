@@ -4,7 +4,7 @@ import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 
 public class PackageDetail {
 
-	
+	public static String PackagePrice;
 	
 	public void fn_clkSaveBtn() throws Exception{
 		try{
