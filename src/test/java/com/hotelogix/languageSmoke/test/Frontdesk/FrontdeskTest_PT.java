@@ -30,33 +30,45 @@ import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
 public class FrontdeskTest_PT {
 
 	private Properties OR1;
-	private HashMap<String,String> HM;
-	private String path="D:\\SpanishSmoke\\LanguagesAutomation\\TestData\\LanguagesTestData.xlsx";
-	private String Sheet_P="Frontdesk_SZ_Portuguese";
-	
-	
-	
-	@BeforeClass
-	public void fn_LoadOR() throws Exception{
-		String st=System.getProperty("user.dir");
-		OR1=GenericMethods.GI().loadOR(st+File.separator+"Config.properties");
-		GenericMethods.GI().fn_loadpro();
-	}
-	
-	@BeforeMethod
-	public void fn_Login() throws Exception{
-		try{
-			String mtdname=Thread.currentThread().getStackTrace()[1].getMethodName();
-			HM=ExcelUtils.UI().getTestCaseDataMap(path, Sheet_P, mtdname);
-			GenericMethods.GI().fn_LaunchBrowser("FF", OR1.getProperty("URL_Frontdesk_SZ"));
-			LoginClass.class.newInstance().fn_LoginHotel(OR1.getProperty("HotelID_Frontdesk_SZ"), OR1.getProperty("UserName_Frontdesk_SZ"), OR1.getProperty("Password_Frontdesk_SZ"), "111111");
-			ContinueTrialPage.class.newInstance().fn_CountinueWithTrail();
-			CashCounterPage.class.newInstance().fn_SelelctCounter(HM.get("Counter_DD"));
-		}catch(Exception e){
-			throw e;
-		}
-	    }
-	
+    private HashMap<String,String> HM;
+    private String path="D:\\SpanishSmoke\\LanguagesAutomation\\TestData\\LanguagesTestData.xlsx";
+    private String Sheet_P="Frontdesk_SZ_Portuguese";
+   
+    private String F_Properties_P="Frontdesk_PT.properties";
+    private String A_Properties_P="Admin_PT.properties";
+    private String F_Properties_S="Frontdesk_SP.properties";
+    private String A_Properties_S="Admin_SP.properties";
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    @BeforeClass
+    public void fn_LoadOR() throws Exception{
+        String st=System.getProperty("user.dir");
+        OR1=GenericMethods.GI().loadORConfig(st+File.separator+"Config.properties");
+        GenericMethods.GI().fn_loadpro(F_Properties_P,A_Properties_P);
+    }
+   
+    @BeforeMethod
+    public void fn_Login() throws Exception{
+        try{
+            String mtdname=Thread.currentThread().getStackTrace()[1].getMethodName();
+            HM=ExcelUtils.UI().getTestCaseDataMap(path, Sheet_P, mtdname);
+            GenericMethods.GI().fn_LaunchBrowser("FF", OR1.getProperty("URL_Frontdesk_SZ"));
+            LoginClass.class.newInstance().fn_LoginHotel(OR1.getProperty("HotelID_Frontdesk_SZ_PT"), OR1.getProperty("UserName_Frontdesk_SZ_PT"), OR1.getProperty("Password_Frontdesk_SZ_PT"), "111111");
+            ContinueTrialPage.class.newInstance().fn_CountinueWithTrail();
+            CashCounterPage.class.newInstance().fn_SelelctCounter(HM.get("Counter_DD"));
+        }catch(Exception e){
+            throw e;
+        }
+        }
+
+
 	
 	//@Test(priority=1,description="Make 2Night and 2 Room reservation using Seasonal Rate.")
 	public void fn_Make2RoomAnd2NightReservation() throws Throwable{

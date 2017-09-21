@@ -8,7 +8,6 @@
           <include name="Login"/>
           <include name="fn_Beforeclass"/>
           <include name="fn_verifyAddAPackageWithInclusion"/>
-          <include name="fn_verifyPkgAttachmentToFrontdesk"/>
           <include name="fn_close"/>
         </methods>
       </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
