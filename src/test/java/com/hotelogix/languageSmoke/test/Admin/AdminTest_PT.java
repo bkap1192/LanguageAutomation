@@ -306,7 +306,6 @@ public class AdminTest_PT {
 	}
 	
 	
-	
 	        @Test(priority=8,description="Attaching  master package to Frontdesk Packages.This attached package is then configured and activated forever.")
 			public void fn_verifyPkgAttachmentToFrontdesk() throws Throwable{
 				try{
