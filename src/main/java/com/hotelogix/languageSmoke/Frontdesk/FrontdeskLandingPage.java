@@ -227,6 +227,24 @@ public class FrontdeskLandingPage {
 	
 	
 	
-	
-	
+
+	/*public void fn_FillQuickReservationForTA(String rate,String roomnum,String salutation,String firstname) throws Exception{
+		try{
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rate_DD"), rate);
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rooms_DD"), roomnum);
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Salutation_DD"), salutation);
+			
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_FirstName_ED"), firstname);
+			String lastname=GenericMethods.GI().generateRandomString();
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_LastName_ED"), lastname);
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Phone_ED"), "85858585");
+			String email=GenericMethods.GI().generateRandomString()+"@gmail.com";
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Email_ED"), email);
+		}catch(UnhandledAlertException e){
+			GenericMethods.GI().ActionOnAlert("Accept");
+		}catch(Exception e){
+			throw e;
+		}
+	    }*/
+
 }

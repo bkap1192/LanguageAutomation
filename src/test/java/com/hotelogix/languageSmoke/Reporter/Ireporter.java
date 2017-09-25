@@ -98,9 +98,6 @@ public class Ireporter implements IReporter, IRetryAnalyzer, ITestListener {
 		
 	}
 
-	
-	
-	
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		String newLine = System.getProperty("line.separator");

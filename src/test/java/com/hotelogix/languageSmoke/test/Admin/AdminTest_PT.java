@@ -51,9 +51,7 @@ public class AdminTest_PT {
 	    private String F_Properties_P="Frontdesk_PT.properties";
 	    private String F_Properties_S="Frontdesk_SP.properties";
 	   
-	   
-	   
-	   
+
 	    private String A_Properties_S="Admin_SP.properties";
 	    private String A_Properties_P="Admin_PT.properties";
 	    private String A_Properties_G="Admin_GM.properties";
@@ -61,6 +59,7 @@ public class AdminTest_PT {
 	   
 	    private Properties OR;
 	    private String configfile="Config.properties";                         
+
 
 	    private String Path="D://LanguageTest//LanguageAutomation//TestData//LanguagesTestData.xlsx";
 
@@ -73,7 +72,9 @@ public class AdminTest_PT {
 	        GenericMethods.GI().fn_loadpro(F_Properties_P,A_Properties_P);
 	       
 	    }
-	
+
+
+  
 	@BeforeMethod
 	public void Login() throws Exception{
 		try{
