@@ -44,9 +44,7 @@ public class GenericMethods {
     public String Roomtype;
 	
 	
-	
-	
-	
+
       private GenericMethods(){
     	  
       }
