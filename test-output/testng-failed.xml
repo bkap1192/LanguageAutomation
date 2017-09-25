@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< HEAD
 <suite verbose="3" name="Failed suite [Suite]">
   <listeners>
     <listener class-name="com.hotelogix.languageSmoke.Reporter.Ireporter"/>
   </listeners>
   <test name="Test(failed)">
+=======
+<suite verbose="3" name="Failed suite [Failed suite [Suite]]">
+  <test name="Test(failed)(failed)">
+>>>>>>> 50adc97ae60f17ffaaa8043c1044caf41d0dd6ba
     <classes>
-      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
+      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
         <methods>
+<<<<<<< HEAD
           <include name="fn_Login"/>
           <include name="fn_Make2RoomAnd2NightReservation"/>
           <include name="fn_LoadOR"/>
+=======
+          <include name="Login"/>
+          <include name="fn_Beforeclass"/>
+          <include name="fn_verifyAddAPackageWithInclusion"/>
+          <include name="fn_close"/>
+>>>>>>> 50adc97ae60f17ffaaa8043c1044caf41d0dd6ba
         </methods>
-      </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
+      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
     </classes>
+<<<<<<< HEAD
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
+=======
+  </test> <!-- Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->
+>>>>>>> 50adc97ae60f17ffaaa8043c1044caf41d0dd6ba

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
@@ -98,4 +99,33 @@ Driver info: driver.version: unknown
       </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
+=======
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Failed suite [Failed suite [Suite]]" duration-ms="193277" started-at="2017-09-21T05:15:49Z" finished-at="2017-09-21T05:19:02Z">
+    <groups>
+    </groups>
+    <test name="Test(failed)(failed)" duration-ms="193277" started-at="2017-09-21T05:15:49Z" finished-at="2017-09-21T05:19:02Z">
+      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
+        <test-method status="PASS" signature="fn_Beforeclass()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="fn_Beforeclass" is-config="true" duration-ms="13" started-at="2017-09-21T10:45:49Z" finished-at="2017-09-21T10:45:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_Beforeclass -->
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="Login" is-config="true" duration-ms="40398" started-at="2017-09-21T10:45:49Z" finished-at="2017-09-21T10:46:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="fn_verifyAddAPackageWithInclusion()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="fn_verifyAddAPackageWithInclusion" duration-ms="152267" started-at="2017-09-21T10:46:29Z" description="Creation of package in Package Master and attaching an Add-on to it." finished-at="2017-09-21T10:49:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_verifyAddAPackageWithInclusion -->
+        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="fn_close" is-config="true" duration-ms="590" started-at="2017-09-21T10:49:02Z" finished-at="2017-09-21T10:49:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_close -->
+      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
+    </test> <!-- Test(failed)(failed) -->
+  </suite> <!-- Failed suite [Failed suite [Suite]] -->
+>>>>>>> 50adc97ae60f17ffaaa8043c1044caf41d0dd6ba
 </testng-results>

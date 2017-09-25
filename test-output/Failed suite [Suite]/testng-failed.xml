@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="3" name="Failed suite [Failed suite [Suite]]">
+  <test name="Test(failed)(failed)">
+    <classes>
+      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
+        <methods>
+          <include name="Login"/>
+          <include name="fn_Beforeclass"/>
+          <include name="fn_verifyAddAPackageWithInclusion"/>
+          <include name="fn_close"/>
+        </methods>
+      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
+    </classes>
+  </test> <!-- Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->

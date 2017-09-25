@@ -32,14 +32,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 
 public class GenericMethods {
-
 	public Properties OR;
 	public WebDriver driver;
 	private static GenericMethods GM;
 	
 	private String P_PropertiesPath="./LanguageAutomation/Admin_PT.properties";
 	private String S_PropertiesPath="D:\\SpanishSmoke\\LanguagesAutomation\\Spanish.properties";
-	
 	
 	private static final String CHAR_LIST ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static final int RANDOM_STRING_LENGTH =5;
@@ -376,31 +374,26 @@ public class GenericMethods {
 
 
 
-public  String GetCurrentWindowID(){
+	public  String GetCurrentWindowID(){
+	    String Currenthandle4 = driver.getWindowHandle();
+	        System.out.println("parent window id:"+Currenthandle4);
+	        return Currenthandle4;
+	}
+
+	public   void  windowHandle(String ParentID) throws InterruptedException{
+	       Set<String> handles4= driver.getWindowHandles();
+	         handles4.remove(ParentID);
+	         driver.switchTo().window(handles4.iterator().next());
+	         Thread.sleep(2000);
+	}
 
 
-    String Currenthandle4 = driver.getWindowHandle();
-//
-        System.out.println("parent window id:"+Currenthandle4);
-
-        return Currenthandle4;
-}
-
-public   void  windowHandle(String ParentID) throws InterruptedException{
-
-       Set<String> handles4= driver.getWindowHandles();
-         handles4.remove(ParentID);
-         driver.switchTo().window(handles4.iterator().next());
-         Thread.sleep(2000);
-}
-
-
-public  void Switch_Parent_Window(String ParentID){
-
-	   driver.switchTo().window(ParentID);
-	   System.out.println("Yoo Back to Parent Window...");
-	   }
-}
+	public  void Switch_Parent_Window(String ParentID){
+		   driver.switchTo().window(ParentID);
+		   System.out.println("Yoo Back to Parent Window...");
+		   }
+	
+	}
 
 
 

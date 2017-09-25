@@ -41,11 +41,7 @@ public class FrontdeskTest_PT {
 	private String A_Properties_S="Admin_SP.properties";
 	
 	
-	
-	
-	
-	
-	
+
 	
 	
 	@BeforeClass
@@ -68,7 +64,9 @@ public class FrontdeskTest_PT {
 			throw e;
 		}
 	    }
-	
+
+
+
 	
 	@Test(priority=1,description="Make 2Night and 2 Room reservation using Seasonal Rate.")
 	public void fn_Make2RoomAnd2NightReservation() throws Throwable{

@@ -27,11 +27,7 @@ public class FrontdeskLandingPage {
 	public String firstname;
 	public String OneNightPackage="One Night package (1N)";
 	public String ONP="One Night package";
-	
-	
-	
-	
-	
+
 	public void fn_RightClick(WebElement we) throws Exception{
 		try{
 			Actions aobj=new Actions(GenericMethods.GI().driver);
@@ -170,8 +166,6 @@ public class FrontdeskLandingPage {
 		}
 	}
 	
-	
-	
 	public boolean fn_CheckPackageinQuickResvationForm() throws Exception{
 		try{
 			ArrayList<String> arr=new ArrayList<String>();
@@ -188,7 +182,6 @@ public class FrontdeskLandingPage {
 			throw e;
 		}
 	    }
-	
 	
 	public void fn_CheckAndCreatePackage(HashMap<String,String> HM) throws Exception{
 		try{
@@ -231,6 +224,8 @@ public class FrontdeskLandingPage {
 			throw e;
 		}
 	}
+	
+	
 	
 	
 	
