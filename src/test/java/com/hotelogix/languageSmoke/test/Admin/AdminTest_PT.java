@@ -46,23 +46,35 @@ import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
 public class AdminTest_PT {
 
 	private HashMap<String ,String> HM;
-	//private String sheet_P="Admin_Portuguese";
-	private String sheet_S="Admin_Spanish";
+    //private String sheet_P="Admin_Portuguese";
+    private String sheet_S="Admin_Spanish";
+    //private String sheet_G="Admin_German";
+    private String F_Properties_P="Frontdesk_PT.properties";
+    private String F_Properties_S="Frontdesk_SP.properties";
+   
+   
+   
+   
+    private String A_Properties_S="Admin_SP.properties";
+    private String A_Properties_P="Admin_PT.properties";
+    private String A_Properties_G="Admin_GM.properties";
+   
+   
+    private Properties OR;
+    private String configfile="Config.properties";                         
 
-	private Properties OR;
-	private String propertiesfile="Config.properties";                          
+    private String Path="D://LanguageTest//LanguageAutomation//TestData//LanguagesTestData.xlsx";
 
-	private String Path="D://LanguageTest//LanguageAutomation//TestData//LanguagesTestData.xlsx";
+   
+   
+    @BeforeClass
+    public void fn_Beforeclass() throws Exception{
+        String sys=System.getProperty("user.dir");
+        OR=GenericMethods.GI().loadORConfig(sys+File.separator+configfile);
+        GenericMethods.GI().fn_loadpro(F_Properties_P,A_Properties_P);
+       
+    }
 
-	
-	
-	@BeforeClass
-	public void fn_Beforeclass() throws Exception{
-		String sys=System.getProperty("user.dir");
-		OR=GenericMethods.GI().loadOR(sys+File.separator+propertiesfile);
-		GenericMethods.GI().fn_loadpro();
-		
-	}
 	
 	
 	@BeforeMethod

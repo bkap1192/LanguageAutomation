@@ -12,11 +12,14 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -29,7 +32,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 
 public class GenericMethods {
-
 	public Properties OR;
 	public WebDriver driver;
 	private static GenericMethods GM;
@@ -37,15 +39,12 @@ public class GenericMethods {
 	private String P_PropertiesPath="./LanguageAutomation/Admin_PT.properties";
 	private String S_PropertiesPath="D:\\SpanishSmoke\\LanguagesAutomation\\Spanish.properties";
 	
-	
 	private static final String CHAR_LIST ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	private static final int RANDOM_STRING_LENGTH =5;
     public String Roomtype;
 	
 	
-	
-	
-	
+
       private GenericMethods(){
     	  
       }
@@ -69,11 +68,11 @@ public class GenericMethods {
       
       
  
-      public Properties fn_loadpro() throws Exception{
+      public Properties fn_loadpro(String property1,String property2) throws Exception{
     	  Properties pro=new Properties();
-    	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+"Frontdesk_PT.properties");
+    	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+property1);
     	  pro.load(fis);
-    	  OR=loadOR();
+    	  OR=loadOR(property2);
           OR.putAll(pro);
     	  return OR;
       }
@@ -97,6 +96,15 @@ public class GenericMethods {
       	}
      	}
 
+      public void getscreenshot(String name) throws Exception {
+    	  try{
+          File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+          FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir")+"\\Screenshots\\"+name+".jpg"));
+    	  }catch(Exception e){
+    		  throw e;
+    	  }
+  }
+      
       
       public void fn_LaunchBrowser(String BrowserType, String url) throws Exception{
     	  try{
@@ -239,7 +247,7 @@ public class GenericMethods {
 	         }
 	        }
 	
-	public Properties loadOR(String path){
+	public Properties loadORConfig(String path){
 		Properties ORF=null;
 		try {
 				FileInputStream fis=new FileInputStream(path);
@@ -252,14 +260,12 @@ public class GenericMethods {
 		      return ORF;
 	        }
 	
-	private Properties loadOR(){
+	public Properties loadOR(String properties){
 		try {
 			String CP = System.getProperty("user.dir");
 			if(OR==null){
 				System.getProperty(P_PropertiesPath);
-
-				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_PT.properties");
-
+				FileInputStream fis=new FileInputStream(CP+File.separator+properties);
 				OR=new Properties();
 				OR.load(fis);
 				return OR;
@@ -366,31 +372,26 @@ public class GenericMethods {
 
 
 
-public  String GetCurrentWindowID(){
+	public  String GetCurrentWindowID(){
+	    String Currenthandle4 = driver.getWindowHandle();
+	        System.out.println("parent window id:"+Currenthandle4);
+	        return Currenthandle4;
+	}
+
+	public   void  windowHandle(String ParentID) throws InterruptedException{
+	       Set<String> handles4= driver.getWindowHandles();
+	         handles4.remove(ParentID);
+	         driver.switchTo().window(handles4.iterator().next());
+	         Thread.sleep(2000);
+	}
 
 
-    String Currenthandle4 = driver.getWindowHandle();
-//
-        System.out.println("parent window id:"+Currenthandle4);
-
-        return Currenthandle4;
-}
-
-public   void  windowHandle(String ParentID) throws InterruptedException{
-
-       Set<String> handles4= driver.getWindowHandles();
-         handles4.remove(ParentID);
-         driver.switchTo().window(handles4.iterator().next());
-         Thread.sleep(2000);
-}
-
-
-public  void Switch_Parent_Window(String ParentID){
-
-	   driver.switchTo().window(ParentID);
-	   System.out.println("Yoo Back to Parent Window...");
-	   }
-}
+	public  void Switch_Parent_Window(String ParentID){
+		   driver.switchTo().window(ParentID);
+		   System.out.println("Yoo Back to Parent Window...");
+		   }
+	
+	}
 
 
 
