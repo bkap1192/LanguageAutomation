@@ -97,6 +97,9 @@ public class Ireporter implements IReporter, IRetryAnalyzer, ITestListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	
 	
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
