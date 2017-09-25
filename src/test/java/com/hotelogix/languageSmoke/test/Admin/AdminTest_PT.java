@@ -60,7 +60,7 @@ public class AdminTest_PT {
 	public void fn_Beforeclass() throws Exception{
 		String sys=System.getProperty("user.dir");
 		OR=GenericMethods.GI().loadOR(sys+File.separator+propertiesfile);
-		GenericMethods.GI().fn_loadpro();
+	//	GenericMethods.GI().fn_loadpro();
 		
 	}
 	

@@ -1,18 +1,18 @@
 <suite name="Suite" verbose="3" >
 
-<!--  <listeners>
-         <listener class-name="com.hotelogix.smoke.AdminTest.Ireporter" />
-    </listeners>-->
+ <listeners>
+         <listener class-name="com.hotelogix.languageSmoke.Reporter.Ireporter" />
+    </listeners>
     
   <test name="Test">
     <classes>
-<<<<<<< HEAD
+
      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT"/>   
-=======
-    <!--   <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT"/>   -->
+
+    <!--   <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT"/> 
           <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT"/>   
-     
->>>>>>> barkha
+       -->
+
        </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

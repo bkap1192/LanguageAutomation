@@ -12,11 +12,14 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -69,11 +72,11 @@ public class GenericMethods {
       
       
  
-      public Properties fn_loadpro() throws Exception{
+      public Properties fn_loadpro(String property1,String property2) throws Exception{
     	  Properties pro=new Properties();
-    	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+"Frontdesk_PT.properties");
+    	  FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+File.separator+property1);
     	  pro.load(fis);
-    	  OR=loadOR();
+    	  OR=loadOR(property2);
           OR.putAll(pro);
     	  return OR;
       }
@@ -97,6 +100,15 @@ public class GenericMethods {
       	}
      	}
 
+      public void getscreenshot(String name) throws Exception {
+    	  try{
+          File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+          FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir")+"\\Screenshots\\"+name+".jpg"));
+    	  }catch(Exception e){
+    		  throw e;
+    	  }
+  }
+      
       
       public void fn_LaunchBrowser(String BrowserType, String url) throws Exception{
     	  try{
@@ -239,7 +251,7 @@ public class GenericMethods {
 	         }
 	        }
 	
-	public Properties loadOR(String path){
+	public Properties loadORConfig(String path){
 		Properties ORF=null;
 		try {
 				FileInputStream fis=new FileInputStream(path);
@@ -252,14 +264,12 @@ public class GenericMethods {
 		      return ORF;
 	        }
 	
-	private Properties loadOR(){
+	public Properties loadOR(String properties){
 		try {
 			String CP = System.getProperty("user.dir");
 			if(OR==null){
 				System.getProperty(P_PropertiesPath);
-
-				FileInputStream fis=new FileInputStream(CP+File.separator+"Admin_PT.properties");
-
+				FileInputStream fis=new FileInputStream(CP+File.separator+properties);
 				OR=new Properties();
 				OR.load(fis);
 				return OR;

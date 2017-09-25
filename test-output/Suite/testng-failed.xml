@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="3" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.hotelogix.languageSmoke.Reporter.Ireporter"/>
+  </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
+      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
         <methods>
-          <include name="Login"/>
-          <include name="fn_Beforeclass"/>
-          <include name="fn_verifyAddAPackageWithInclusion"/>
-          <include name="fn_close"/>
+          <include name="fn_Login"/>
+          <include name="fn_Make2RoomAnd2NightReservation"/>
+          <include name="fn_LoadOR"/>
         </methods>
-      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
+      </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

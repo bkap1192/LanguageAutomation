@@ -1,143 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="235008" started-at="2017-09-18T09:46:41Z" finished-at="2017-09-18T09:50:36Z">
+  <suite name="Suite" duration-ms="77532" started-at="2017-09-22T14:03:23Z" finished-at="2017-09-22T14:04:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="235008" started-at="2017-09-18T09:46:41Z" finished-at="2017-09-18T09:50:36Z">
+    <test name="Test" duration-ms="77532" started-at="2017-09-22T14:03:23Z" finished-at="2017-09-22T14:04:41Z">
       <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
-        <test-method status="PASS" signature="fn_LoadOR()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@1a268de]" name="fn_LoadOR" is-config="true" duration-ms="13" started-at="2017-09-18T15:16:41Z" finished-at="2017-09-18T15:16:41Z">
+        <test-method status="PASS" signature="fn_LoadOR()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@38203]" name="fn_LoadOR" is-config="true" duration-ms="13" started-at="2017-09-22T19:33:23Z" finished-at="2017-09-22T19:33:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_LoadOR -->
-        <test-method status="PASS" signature="fn_Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@1a268de]" name="fn_Login" is-config="true" duration-ms="58151" started-at="2017-09-18T15:16:41Z" finished-at="2017-09-18T15:17:40Z">
+        <test-method status="FAIL" signature="fn_Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@38203]" name="fn_Login" is-config="true" duration-ms="0" started-at="2017-09-22T19:33:23Z" finished-at="2017-09-22T19:33:23Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//a[@class='upgrade-btn trial']"}
+Command duration or timeout: 50.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'hms-PCdin', ip: '192.168.2.113', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 4c91b978-b18d-4911-a7f1-ac93dcc1a86f
+*** Element info: {Using=xpath, value=//a[@class='upgrade-btn trial']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//a[@class='upgrade-btn trial']"}
+Command duration or timeout: 50.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'hms-PCdin', ip: '192.168.2.113', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 4c91b978-b18d-4911-a7f1-ac93dcc1a86f
+*** Element info: {Using=xpath, value=//a[@class='upgrade-btn trial']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.getWebElement(GenericMethods.java:286)
+	at com.hotelogix.languageSmoke.Frontdesk.ContinueTrialPage.fn_CountinueWithTrail(ContinueTrialPage.java:19)
+	at com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT.fn_Login(FrontdeskTest_PT.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//a[@class='upgrade-btn trial']"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'hms-PCdin', ip: '192.168.2.113', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_45'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/din/AppData/Local/Temp/anonymous2265011971507310277webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/din/AppData/Local/Temp/anonymous2265011971507310277webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_Login -->
-        <test-method status="PASS" signature="fn_Make1RoomReservationWithTravelAgentLink()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@1a268de]" name="fn_Make1RoomReservationWithTravelAgentLink" duration-ms="176272" started-at="2017-09-18T15:17:40Z" description="Reservation made successfully via travel agent in frontdesk." finished-at="2017-09-18T15:20:36Z">
+        <test-method status="SKIP" signature="fn_Make2RoomAnd2NightReservation()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@38203]" name="fn_Make2RoomAnd2NightReservation" duration-ms="1" started-at="2017-09-22T19:34:41Z" description="Make 2Night and 2 Room reservation using Seasonal Rate." finished-at="2017-09-22T19:34:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_Make1RoomReservationWithTravelAgentLink -->
-        <test-method status="PASS" signature="fn_Close()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@1a268de]" name="fn_Close" is-config="true" duration-ms="558" started-at="2017-09-18T15:20:36Z" finished-at="2017-09-18T15:20:36Z">
+        </test-method> <!-- fn_Make2RoomAnd2NightReservation -->
+        <test-method status="SKIP" signature="fn_Close()[pri:0, instance:com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT@38203]" name="fn_Close" is-config="true" duration-ms="0" started-at="2017-09-22T19:34:41Z" finished-at="2017-09-22T19:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_Close -->
       </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
-=======
-<testng-results skipped="0" failed="0" total="8" passed="8">
-  <reporter-output>
-  </reporter-output>
-  <suite name="Suite" duration-ms="601999" started-at="2017-09-18T09:07:12Z" finished-at="2017-09-18T09:17:14Z">
-    <groups>
-    </groups>
-    <test name="Test" duration-ms="601999" started-at="2017-09-18T09:07:12Z" finished-at="2017-09-18T09:17:14Z">
-      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
-        <test-method status="PASS" signature="fn_Beforeclass()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_Beforeclass" is-config="true" duration-ms="12" started-at="2017-09-18T14:37:12Z" finished-at="2017-09-18T14:37:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_Beforeclass -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="34063" started-at="2017-09-18T14:37:12Z" finished-at="2017-09-18T14:37:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdmineConsoleSuccessfulLogin()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyAdmineConsoleSuccessfulLogin" duration-ms="481" started-at="2017-09-18T14:37:46Z" description="User gets redirected to homepage of Admine Console after login." finished-at="2017-09-18T14:37:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdmineConsoleSuccessfulLogin -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="294" started-at="2017-09-18T14:37:47Z" finished-at="2017-09-18T14:37:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="35680" started-at="2017-09-18T14:37:47Z" finished-at="2017-09-18T14:38:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfAmenity()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyAdditionOfAmenity" duration-ms="17334" started-at="2017-09-18T14:38:23Z" description="Added amenity gets displayed on &#039;Amenities List&#039; page and is also displayed on &#039;Add a Room Type&#039; page under &#039;Select Amenities&#039; &gt;&gt; &#039;Available Amenities&#039;" finished-at="2017-09-18T14:38:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfAmenity -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="238" started-at="2017-09-18T14:38:40Z" finished-at="2017-09-18T14:38:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="35688" started-at="2017-09-18T14:38:40Z" finished-at="2017-09-18T14:39:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfRoom()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyAdditionOfRoom" duration-ms="12228" started-at="2017-09-18T14:39:16Z" description="Added Room is displayed on &#039;Rooms List&#039; page with status as active(green tick)" finished-at="2017-09-18T14:39:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfRoom -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="496" started-at="2017-09-18T14:39:28Z" finished-at="2017-09-18T14:39:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="36069" started-at="2017-09-18T14:39:29Z" finished-at="2017-09-18T14:40:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifySaveAndDuplicateRoomBtn()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifySaveAndDuplicateRoomBtn" duration-ms="13091" started-at="2017-09-18T14:40:05Z" description="On clicking &#039;Save and Duplicate&#039; button on &#039;Add/Edit a Room&#039;,all the rooms of the same room type are displayed in " finished-at="2017-09-18T14:40:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifySaveAndDuplicateRoomBtn -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="382" started-at="2017-09-18T14:40:18Z" finished-at="2017-09-18T14:40:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="35001" started-at="2017-09-18T14:40:18Z" finished-at="2017-09-18T14:40:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyRoomTaxSelectionInRoomType()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyRoomTaxSelectionInRoomType" duration-ms="45378" started-at="2017-09-18T14:40:53Z" description="Creation of room tax and attaching it to a room type." finished-at="2017-09-18T14:41:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyRoomTaxSelectionInRoomType -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="270" started-at="2017-09-18T14:41:39Z" finished-at="2017-09-18T14:41:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="35222" started-at="2017-09-18T14:41:39Z" finished-at="2017-09-18T14:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAdditionOfAddOns()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyAdditionOfAddOns" duration-ms="40897" started-at="2017-09-18T14:42:14Z" description="Creation of ADD-ONS(INCLUSIONS).It gets reflected in &#039;Add/Edit Package&#039; page." finished-at="2017-09-18T14:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAdditionOfAddOns -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="248" started-at="2017-09-18T14:42:55Z" finished-at="2017-09-18T14:42:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="36485" started-at="2017-09-18T14:42:55Z" finished-at="2017-09-18T14:43:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAddAPackageWithInclusion()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyAddAPackageWithInclusion" duration-ms="142677" started-at="2017-09-18T14:43:32Z" description="Creation of package in Package Master and attaching an Add-on to it." finished-at="2017-09-18T14:45:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyAddAPackageWithInclusion -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="452" started-at="2017-09-18T14:45:55Z" finished-at="2017-09-18T14:45:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="Login" is-config="true" duration-ms="33684" started-at="2017-09-18T14:45:55Z" finished-at="2017-09-18T14:46:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyPkgAttachmentToFrontdesk()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_verifyPkgAttachmentToFrontdesk" duration-ms="45367" started-at="2017-09-18T14:46:29Z" description="Attaching a master package to Frontdesk Packages.This attached package is then configured and activated forever." finished-at="2017-09-18T14:47:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_verifyPkgAttachmentToFrontdesk -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1aeed2f]" name="fn_close" is-config="true" duration-ms="244" started-at="2017-09-18T14:47:14Z" finished-at="2017-09-18T14:47:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- fn_close -->
-      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
->>>>>>> barkha
 </testng-results>
