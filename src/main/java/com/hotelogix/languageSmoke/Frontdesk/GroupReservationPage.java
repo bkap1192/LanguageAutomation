@@ -13,17 +13,21 @@ public class GroupReservationPage {
 	
 		public void fn_FillDetailsForGroupReservation(String taname,String fname) throws Exception{
 			try{
-				
 				GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_GroupReservationPage_TAname_ED"), taname);
+				GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_GroupReservationPage_TAcompany_ED"), "IBM");
 				GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_GroupReservationPage_FirstName_ED"), fname);
 				String lastname=GenericMethods.GI().generateRandomString();
 				GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_GroupReservationPage_LastName_ED"), lastname);
 				GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_GroupReservationPage_Phone_ED"), "858585858");
+				Thread.sleep(2000);
 				GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_GroupReservationPage_Reserve_BT"));
+				Thread.sleep(6000);
 			}catch(Exception e){
 				throw e;
 			}
 		    }
+		
+		
 		
 		public void fn_FillDetailsForGroupReservation(String fname) throws Exception{
 			try{

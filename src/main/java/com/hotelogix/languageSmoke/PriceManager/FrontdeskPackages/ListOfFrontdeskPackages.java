@@ -42,6 +42,7 @@ public class ListOfFrontdeskPackages {
 	public void fn_confgrAttachedPkg(String PkgName) throws Exception{
 		try{
 		int count=GenericMethods.GI().fn_GetListWebElement("A_ListOfFrontdeskPackages_TrCount").size();
+		System.out.println("Harish");
         for(int i=2;i<=count-2;i++){
         	String data=GenericMethods.GI().driver.findElement(By.xpath("//table[@class='list_viewnew']/tbody//tr["+i+"]//td[3]")).getText();
         	if(data.contains(PkgName)){

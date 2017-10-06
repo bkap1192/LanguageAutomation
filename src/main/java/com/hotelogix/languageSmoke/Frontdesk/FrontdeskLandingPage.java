@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
 import com.hotelogix.languageSmoke.CommonClasses.AttachPackage;
 import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
@@ -73,6 +71,37 @@ public class FrontdeskLandingPage {
 	public void fn_FillQuickReservationForm(String rate,String roomnum,String salutation,String firstname,String reservkey) throws Exception{
 		try{
 			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rate_DD"), rate);
+			Thread.sleep(500);
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rooms_DD"), roomnum);
+			Thread.sleep(500);
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Salutation_DD"), salutation);
+			Thread.sleep(500);
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_FirstName_ED"), firstname);
+			Thread.sleep(500);
+			String lastname=GenericMethods.GI().generateRandomString();
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_LastName_ED"), lastname);
+			Thread.sleep(500);
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Phone_ED"), "85858585");
+			Thread.sleep(500);
+			String email=GenericMethods.GI().generateRandomString()+"@gmail.com";
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Email_ED"), email);
+			Thread.sleep(500);
+			try{
+			GenericMethods.GI().js_Click(GenericMethods.GI().getWebElement(reservkey));
+			}catch(Exception e){
+				GenericMethods.GI().js_Click(GenericMethods.GI().getWebElement(reservkey));
+			}
+		}catch(UnhandledAlertException e){
+			GenericMethods.GI().ActionOnAlert("Accept");
+		}catch(Exception e){
+			throw e;
+		}
+	    }
+	
+	
+	public void fn_FillQuickReservationForTA(String rate,String roomnum,String salutation,String firstname) throws Exception{
+		try{
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rate_DD"), rate);
 			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rooms_DD"), roomnum);
 			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Salutation_DD"), salutation);
 			
@@ -82,7 +111,6 @@ public class FrontdeskLandingPage {
 			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Phone_ED"), "85858585");
 			String email=GenericMethods.GI().generateRandomString()+"@gmail.com";
 			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Email_ED"), email);
-			GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement(reservkey));
 		}catch(UnhandledAlertException e){
 			GenericMethods.GI().ActionOnAlert("Accept");
 		}catch(Exception e){
@@ -90,14 +118,15 @@ public class FrontdeskLandingPage {
 		}
 	    }
 	
+	
 	public void fn_VerifyCreatedReservation(String firstname,String expected) throws Throwable{
 		try{
-			Thread.sleep(5000);
-			String status=GenericMethods.GI().driver.findElement(By.xpath("(//div[contains(text(),'"+firstname+"')])[1]")).getAttribute("rsvstatus");
+			Thread.sleep(3000);
+			String status=GenericMethods.GI().driver.findElement(By.cssSelector("div.rs-new")).getAttribute("rsvstatus");
 		    VerifyUtils.VU().fn_AsserEquals(status, expected);
 		}catch(Exception e){
-			Thread.sleep(3000);
-			String status=GenericMethods.GI().driver.findElement(By.xpath("(//div[contains(@title,'"+firstname+"')])[1]")).getAttribute("rsvstatus");
+			Thread.sleep(1000);
+			String status=GenericMethods.GI().driver.findElement(By.cssSelector("div.rs-new")).getAttribute("rsvstatus");
 		    VerifyUtils.VU().fn_AsserEquals(status, expected);
 		}catch(Throwable e){
 			throw e;
@@ -121,7 +150,7 @@ public class FrontdeskLandingPage {
 	
 	public void fn_ClickSingleOrGroupOrAgentLink(String linkkeyname) throws Exception{
 		try{
-			GenericMethods.GI().fn_ActionsClick(GenericMethods.GI().getWebElement(linkkeyname));
+			GenericMethods.GI().js_Click(GenericMethods.GI().getWebElement(linkkeyname));
 		}catch(Exception e){
 			Thread.sleep(2000);
 			GenericMethods.GI().js_Click(GenericMethods.GI().getWebElement(linkkeyname));
@@ -158,7 +187,7 @@ public class FrontdeskLandingPage {
 		try{
 			boolean result=fn_CheckPackageinQuickResvationForm();
 			if(result==false){
-				GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Admin_LK"));
+				//GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Admin_LK"));
 				GenericMethods.GI().switchToWindowHandle(HM.get("Admin_Title"));
 				BasePage.AHP().fn_NavigateAnyModule(GenericMethods.GI().getWebElement("A_AdminHomePage_PriceManager"), GenericMethods.GI().getWebElement("A_AdminHomePage_FrontdeskPackage"));
 				
@@ -207,6 +236,7 @@ public class FrontdeskLandingPage {
 	}
 	
 	
+
 	public void fn_searchReservByID(String ID) throws Exception{
 		try{
 		/*Actions acobj= new Actions(GenericMethods.GI().driver);
@@ -221,4 +251,24 @@ public class FrontdeskLandingPage {
 	}
 	
 	
+
+	/*public void fn_FillQuickReservationForTA(String rate,String roomnum,String salutation,String firstname) throws Exception{
+		try{
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rate_DD"), rate);
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rooms_DD"), roomnum);
+			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Salutation_DD"), salutation);
+			
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_FirstName_ED"), firstname);
+			String lastname=GenericMethods.GI().generateRandomString();
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_LastName_ED"), lastname);
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Phone_ED"), "85858585");
+			String email=GenericMethods.GI().generateRandomString()+"@gmail.com";
+			GenericMethods.GI().fn_Sendkeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Email_ED"), email);
+		}catch(UnhandledAlertException e){
+			GenericMethods.GI().ActionOnAlert("Accept");
+		}catch(Exception e){
+			throw e;
+		}
+	    }*/
+
 }
