@@ -3,21 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT">
+      <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
         <methods>
-<<<<<<< HEAD
-          <include name="fn_Login"/>
-          <include name="fn_Close"/>
-          <include name="fn_Make1RoomReservationWithTravelAgentLink"/>
-          <include name="fn_LoadOR"/>
-=======
           <include name="Login"/>
+          <include name="fn_createWebReservAndVerifyRatesOnFD"/>
           <include name="fn_Beforeclass"/>
-          <include name="fn_verifyAddAPackageWithInclusion"/>
           <include name="fn_close"/>
->>>>>>> barkha
         </methods>
-      </class> <!-- com.hotelogix.languageSmoke.test.Frontdesk.FrontdeskTest_PT -->
+      </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

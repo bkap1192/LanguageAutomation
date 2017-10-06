@@ -16,6 +16,10 @@ import org.testng.annotations.Test;
 import com.hotelogix.languageSmoke.BaseUtils.BasePage;
 import com.hotelogix.languageSmoke.CommonClasses.AttachPackage;
 import com.hotelogix.languageSmoke.CommonClasses.PackageDetail;
+import com.hotelogix.languageSmoke.Frontdesk.CashCounterPage;
+import com.hotelogix.languageSmoke.Frontdesk.ContinueTrialPage;
+import com.hotelogix.languageSmoke.Frontdesk.FrontdeskLandingPage;
+import com.hotelogix.languageSmoke.Frontdesk.ViewDetailsPage;
 import com.hotelogix.languageSmoke.General.DefaultSettings.DefaultSettingsPage;
 import com.hotelogix.languageSmoke.LoginPage.LoginClass;
 import com.hotelogix.languageSmoke.PriceManager.AddOnsInclusions.AddAddOnsPage;
@@ -39,6 +43,11 @@ import com.hotelogix.languageSmoke.RoomManager.RoomTypes.RoomTypesLandingPage;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.AddARoomPage;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.AddMultipleRooms;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.RoomsListLandingPage;
+import com.hotelogix.languageSmoke.Web.WebAddMoreRoomPage;
+import com.hotelogix.languageSmoke.Web.WebConfirmReservationPage;
+import com.hotelogix.languageSmoke.Web.WebConfirmReservationPrintPage;
+import com.hotelogix.languageSmoke.Web.WebReservationHomePage;
+import com.hotelogix.languageSmoke.Web.WebSelectRoomPage;
 import com.hotelogix.languageSmoke.admin.GenericClass.ExcelUtils;
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
@@ -79,15 +88,15 @@ public class AdminTest_PT {
 	@BeforeMethod
 	public void Login() throws Exception{
 		try{
-			GenericMethods.GI().fn_LaunchBrowser("FF", OR.getProperty("URL_Admin_SZ"));
-			new LoginClass().fn_LoginHotel(OR.getProperty("HotelID_Admin_SZ_PT"), OR.getProperty("UserName_Admin_SZ_PT"), OR.getProperty("Password_Admin_SZ_PT"));
+			GenericMethods.GI().fn_LaunchBrowser("FF", OR.getProperty("URL_Admin_SG"));
+			new LoginClass().fn_LoginHotel(OR.getProperty("HotelID_Admin_SG_PT"), OR.getProperty("UserName_Admin_SG_PT"), OR.getProperty("Password_Admin_SG_PT"));
 		}catch(Exception e){
 			throw e;
 		}
 	    }
 	
 
-	@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
+	//@Test(priority=1,description="User gets redirected to homepage of Admine Console after login.")
 	public void fn_verifyAdmineConsoleSuccessfulLogin() throws Exception{
 		try{
 			String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -102,7 +111,7 @@ public class AdminTest_PT {
 	
 	
 
-	@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
+	//@Test(priority=2,description="Added amenity gets displayed on 'Amenities List' page and is also displayed on 'Add a Room Type' page under 'Select Amenities' >> 'Available Amenities'")
 	public void fn_verifyAdditionOfAmenity() throws Exception{
 		try{
 		
@@ -135,7 +144,7 @@ public class AdminTest_PT {
 	    }
 	
 	
-	@Test(priority=3,description="Added Room is displayed on 'Rooms List' page with status as active(green tick)")
+	//@Test(priority=3,description="Added Room is displayed on 'Rooms List' page with status as active(green tick)")
 	public void fn_verifyAdditionOfRoom() throws Throwable{
 	try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -158,7 +167,7 @@ public class AdminTest_PT {
 	}
 	
 	
-	@Test(priority=4,description="On clicking 'Save and Duplicate' button on 'Add/Edit a Room',all the rooms of the same room type are displayed in ")
+	//@Test(priority=4,description="On clicking 'Save and Duplicate' button on 'Add/Edit a Room',all the rooms of the same room type are displayed in ")
 	public void fn_verifySaveAndDuplicateRoomBtn() throws Throwable{
 		try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -176,7 +185,7 @@ public class AdminTest_PT {
 	}
 	
 	
-	@Test(priority=5,description="Creation of room tax and attaching it to a room type.")
+	//@Test(priority=5,description="Creation of room tax and attaching it to a room type.")
 	public void fn_verifyRoomTaxSelectionInRoomType() throws Throwable{
 		try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -214,7 +223,7 @@ public class AdminTest_PT {
 	
 	
 	
-	@Test(priority=6,description="Creation of ADD-ONS(INCLUSIONS).It gets reflected in 'Add/Edit Package' page.")
+	//@Test(priority=6,description="Creation of ADD-ONS(INCLUSIONS).It gets reflected in 'Add/Edit Package' page.")
 	public void fn_verifyAdditionOfAddOns() throws Throwable{
 		try{
 		String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -248,7 +257,7 @@ public class AdminTest_PT {
 	}
 	
 	
-	@Test(priority=7,description="Creation of package in Package Master and attaching an Add-on to it.")
+	//@Test(priority=7,description="Creation of package in Package Master and attaching an Add-on to it.")
 	public void fn_verifyAddAPackageWithInclusion() throws Throwable{
 		try{
 		
@@ -318,7 +327,7 @@ public class AdminTest_PT {
 	
 	
 	
-	        @Test(priority=8,description="Attaching  master package to Frontdesk Packages.This attached package is then configured and activated forever.")
+	        //@Test(priority=8,description="Attaching  master package to Frontdesk Packages.This attached package is then configured and activated forever.")
 			public void fn_verifyPkgAttachmentToFrontdesk() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -362,6 +371,69 @@ public class AdminTest_PT {
 					throw e;
 				}
 			}
+			
+			
+			@Test(priority=9,description="Navigate to Web Console by clicking 'Web Reservation' link on frontdesk, and create a web reservation.Verify rates and taxes posted for booking on frontdesk.")
+			public void fn_createWebReservAndVerifyRatesOnFD() throws Throwable{
+				try{
+				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
+				HM=ExcelUtils.UI().getTestCaseDataMap(Path, sheet_P, methodname);
+				GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("A_AdminHomePage_Frontdesk_Link"));
+				GenericMethods.GI().switchToWindowHandle(HM.get("Frontdesk_Title"));
+				ContinueTrialPage CTP=new ContinueTrialPage();
+				CTP.fn_CountinueWithTrail();
+				Thread.sleep(4000);
+                CashCounterPage CCP=new CashCounterPage();
+				CCP.fn_SelelctCounter(HM.get("CashCounter"));
+				Thread.sleep(4000);
+                FrontdeskLandingPage FLP=new FrontdeskLandingPage();
+                FLP.fn_clkCancelBtn();
+                GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_WebReservation_Link"));
+                Thread.sleep(4000);
+                GenericMethods.GI().switchToWindowHandle(HM.get("WebConsole_Title"));
+                WebReservationHomePage WRHP=new WebReservationHomePage();
+                String text=WRHP.fn_getPageHeader();
+                VerifyUtils.VU().fn_AsserEquals(text, HM.get("WebReservHomePage_Header"));
+                WRHP.fn_checkAvailabilty();
+                Thread.sleep(4000);
+                WebSelectRoomPage WSRP=new WebSelectRoomPage();
+                String header=WSRP.fn_getPageHeader();
+                VerifyUtils.VU().fn_AsserEquals(header, HM.get("WebSelectRoomPage_Header"));
+                GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_WebSelectRoomPage_Select_BTN"));
+                Thread.sleep(4000);
+                WebAddMoreRoomPage WAMRP=new WebAddMoreRoomPage();
+                String header1=WAMRP.fn_getPageHeader();
+                VerifyUtils.VU().fn_AsserEquals(header1, HM.get("WebAddMoreRoomPage_Header"));
+                GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_WebAddMoreRoomPage_Confirm_BTN"));
+                Thread.sleep(4000);
+                WebConfirmReservationPage WCRP=new WebConfirmReservationPage();
+                String header2=WCRP.fn_getPageHeader();
+                VerifyUtils.VU().fn_AsserEquals(header2, HM.get("WebConfrimReservPage_Header"));
+                WCRP.fn_ConfirmBooking();
+                Thread.sleep(4000);
+                WebConfirmReservationPrintPage WCRPP=new WebConfirmReservationPrintPage();
+                String header3=WCRPP.fn_getPageHeader();
+                VerifyUtils.VU().fn_AsserEquals(header3, HM.get("WebConfirmReservPrintPage_Header"));
+                String reservID=WCRPP.fn_getReservID();
+                ArrayList<String> al1=WCRPP.fn_getAmtDetails();
+                GenericMethods.GI().driver.close();
+                GenericMethods.GI().switchToWindowHandle(HM.get("Frontdesk_Title"));
+                GenericMethods.GI().driver.navigate().refresh();
+                Thread.sleep(5000);
+                FLP.fn_clkCancelBtn();
+                FLP.fn_searchReservByID(reservID.split(" ")[3].trim());
+                GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Record_Link"));
+                Thread.sleep(6000);
+                ViewDetailsPage VDP=new ViewDetailsPage();
+                ArrayList<String> al2=VDP.fn_getAmtDetails();
+                VerifyUtils.VU().fn_assertArrayList(al1,al2);
+				}catch(Throwable e){
+					throw e;
+				}
+			
+			}
+			
+			
 			
 			/*
 			 * 

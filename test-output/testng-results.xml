@@ -1,29 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Failed suite [Failed suite [Suite]]" duration-ms="193277" started-at="2017-09-21T05:15:49Z" finished-at="2017-09-21T05:19:02Z">
+  <suite name="Default suite" duration-ms="237245" started-at="2017-09-28T08:55:24Z" finished-at="2017-09-28T08:59:21Z">
     <groups>
     </groups>
-    <test name="Test(failed)(failed)" duration-ms="193277" started-at="2017-09-21T05:15:49Z" finished-at="2017-09-21T05:19:02Z">
+    <test name="Default test" duration-ms="237245" started-at="2017-09-28T08:55:24Z" finished-at="2017-09-28T08:59:21Z">
       <class name="com.hotelogix.languageSmoke.test.Admin.AdminTest_PT">
-        <test-method status="PASS" signature="fn_Beforeclass()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="fn_Beforeclass" is-config="true" duration-ms="13" started-at="2017-09-21T10:45:49Z" finished-at="2017-09-21T10:45:49Z">
+        <test-method status="PASS" signature="fn_Beforeclass()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@78c730]" name="fn_Beforeclass" is-config="true" duration-ms="12" started-at="2017-09-28T14:25:24Z" finished-at="2017-09-28T14:25:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_Beforeclass -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="Login" is-config="true" duration-ms="40398" started-at="2017-09-21T10:45:49Z" finished-at="2017-09-21T10:46:29Z">
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@78c730]" name="Login" is-config="true" duration-ms="60983" started-at="2017-09-28T14:25:24Z" finished-at="2017-09-28T14:26:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="fn_verifyAddAPackageWithInclusion()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="fn_verifyAddAPackageWithInclusion" duration-ms="152267" started-at="2017-09-21T10:46:29Z" description="Creation of package in Package Master and attaching an Add-on to it." finished-at="2017-09-21T10:49:02Z">
+        <test-method status="FAIL" signature="fn_createWebReservAndVerifyRatesOnFD()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@78c730]" name="fn_createWebReservAndVerifyRatesOnFD" duration-ms="175442" started-at="2017-09-28T14:26:25Z" description="Navigate to Web Console by clicking &#039;Web Reservation&#039; link on frontdesk, and create a web reservation.Verify rates and taxes posted for booking on frontdesk." finished-at="2017-09-28T14:29:21Z">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[Element not found in the cache - perhaps the page has changed since it was looked up
+Command duration or timeout: 78.34 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'hms-update4', ip: '192.168.2.115', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_65'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=40.0.3, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 73a57fe4-6b0e-484e-9b2f-f247989be966]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
+Command duration or timeout: 78.34 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'hms-update4', ip: '192.168.2.115', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_65'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=40.0.3, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 73a57fe4-6b0e-484e-9b2f-f247989be966
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:368)
+	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.fn_ValidateWebelement(GenericMethods.java:120)
+	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.js_Click(GenericMethods.java:200)
+	at com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods.fn_Click(GenericMethods.java:151)
+	at com.hotelogix.languageSmoke.Frontdesk.CashCounterPage.fn_SelelctCounter(CashCounterPage.java:10)
+	at com.hotelogix.languageSmoke.test.Admin.AdminTest_PT.fn_createWebReservAndVerifyRatesOnFD(AdminTest_PT.java:387)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'hms-update4', ip: '192.168.2.115', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_65'
+Driver info: driver.version: unknown
+	at <anonymous class>.fxdriver.cache.getElementAt(resource://fxdriver/modules/web-element-cache.js:9454)
+	at <anonymous class>.Utils.getElementAt(file:///C:/Users/qa/AppData/Local/Temp/anonymous2883155201652406665webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9039)
+	at <anonymous class>.WebElement.isElementDisplayed(file:///C:/Users/qa/AppData/Local/Temp/anonymous2883155201652406665webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12189)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/qa/AppData/Local/Temp/anonymous2883155201652406665webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/qa/AppData/Local/Temp/anonymous2883155201652406665webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_verifyAddAPackageWithInclusion -->
-        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@1f3ddb1]" name="fn_close" is-config="true" duration-ms="590" started-at="2017-09-21T10:49:02Z" finished-at="2017-09-21T10:49:02Z">
+        </test-method> <!-- fn_createWebReservAndVerifyRatesOnFD -->
+        <test-method status="PASS" signature="fn_close()[pri:0, instance:com.hotelogix.languageSmoke.test.Admin.AdminTest_PT@78c730]" name="fn_close" is-config="true" duration-ms="773" started-at="2017-09-28T14:29:21Z" finished-at="2017-09-28T14:29:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fn_close -->
       </class> <!-- com.hotelogix.languageSmoke.test.Admin.AdminTest_PT -->
-    </test> <!-- Test(failed)(failed) -->
-  </suite> <!-- Failed suite [Failed suite [Suite]] -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
