@@ -371,8 +371,11 @@ public class AdminTest_PT {
 				}
 			}
 			
+
 			
-			@Test(priority=9,description="Navigate to Web Console by clicking 'Web Reservation' link on frontdesk, and create a web reservation.Verify rates and taxes posted for booking on frontdesk.")
+
+	        @Test(priority=9,description="Navigate to Web Console by clicking 'Web Reservation' link on frontdesk, and create a web reservation.Verify rates and taxes posted for booking on frontdesk.")
+
 			public void fn_createWebReservAndVerifyRatesOnFD() throws Throwable{
 				try{
 				String methodname=Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -431,9 +434,7 @@ public class AdminTest_PT {
 				}
 			
 			}
-			
-			
-			
+
 			/*
 			 * 
 			@Test(priority=9,description="Attaching a master package to Web Packages.This attached package is then configured and activated forever.")

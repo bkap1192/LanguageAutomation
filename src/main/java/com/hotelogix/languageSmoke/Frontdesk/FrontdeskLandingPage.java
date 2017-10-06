@@ -251,7 +251,6 @@ public class FrontdeskLandingPage {
 	}
 	
 	
-
 	/*public void fn_FillQuickReservationForTA(String rate,String roomnum,String salutation,String firstname) throws Exception{
 		try{
 			GenericMethods.GI().selectElement(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Rate_DD"), rate);
@@ -270,5 +269,6 @@ public class FrontdeskLandingPage {
 			throw e;
 		}
 	    }*/
+
 
 }

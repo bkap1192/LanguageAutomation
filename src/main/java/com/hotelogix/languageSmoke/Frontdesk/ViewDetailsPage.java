@@ -9,8 +9,11 @@ public class ViewDetailsPage {
 	
 	public String Rate;
 	
-	public ArrayList<String> al1=new ArrayList<String> ();;
+
+
+	public ArrayList<String> al1=new ArrayList<String> ();
 	
+
 	public String fn_GetRate() throws Exception{
 		try{
 			
@@ -19,7 +22,6 @@ public class ViewDetailsPage {
 			throw e;
 		}
 	    }
-	
 	
 	
 	public ArrayList<String> fn_getAmtDetails() throws Exception{
