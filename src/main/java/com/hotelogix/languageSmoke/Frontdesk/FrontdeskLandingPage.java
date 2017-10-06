@@ -192,5 +192,26 @@ public class FrontdeskLandingPage {
 		}
 	}
 	
+	public void fn_clkCancelBtn() throws Exception{
+		try{
+		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Cancel_LK"));
+		GenericMethods.GI().ActionOnAlert("Accept");
+		}catch(Exception e){
+			throw e;
+		}		
+	}
 	
+	
+	public void fn_searchReservByID(String ID) throws Exception{
+		try{
+		/*Actions acobj= new Actions(GenericMethods.GI().driver);
+		Thread.sleep(2000);
+		acobj.sendKeys(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Search_ED"), ID);*/
+		GenericMethods.GI().js_Sendkey(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Search_ED"), ID);
+			GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_Search_CB"));
+		GenericMethods.GI().fn_Click(GenericMethods.GI().getWebElement("F_FrontdeskLandingPage_SearchAll_BTN"));
+		}catch(Exception e){
+			throw e;
+		}
+	}
 }

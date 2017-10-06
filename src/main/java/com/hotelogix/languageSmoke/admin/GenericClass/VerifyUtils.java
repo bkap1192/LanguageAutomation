@@ -44,4 +44,14 @@ public class VerifyUtils {
 			throw e;
 		}
 	}
+	
+	
+	public void fn_assertArrayList(ArrayList<String> actual,ArrayList<String> expected) throws Exception{
+		try{
+		Assert.assertEquals(actual, expected);
+		}catch(Exception e){
+			throw e;
+		}
+	}
+	
 }
