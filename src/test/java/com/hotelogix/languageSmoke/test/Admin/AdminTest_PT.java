@@ -43,11 +43,11 @@ import com.hotelogix.languageSmoke.RoomManager.RoomTypes.RoomTypesLandingPage;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.AddARoomPage;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.AddMultipleRooms;
 import com.hotelogix.languageSmoke.RoomManager.Rooms.RoomsListLandingPage;
-import com.hotelogix.languageSmoke.Web.WebAddMoreRoomPage;
+/*import com.hotelogix.languageSmoke.Web.WebAddMoreRoomPage;
 import com.hotelogix.languageSmoke.Web.WebConfirmReservationPage;
 import com.hotelogix.languageSmoke.Web.WebConfirmReservationPrintPage;
 import com.hotelogix.languageSmoke.Web.WebReservationHomePage;
-import com.hotelogix.languageSmoke.Web.WebSelectRoomPage;
+import com.hotelogix.languageSmoke.Web.WebSelectRoomPage;*/
 import com.hotelogix.languageSmoke.admin.GenericClass.ExcelUtils;
 import com.hotelogix.languageSmoke.admin.GenericClass.GenericMethods;
 import com.hotelogix.languageSmoke.admin.GenericClass.VerifyUtils;
@@ -374,7 +374,7 @@ public class AdminTest_PT {
 
 			
 
-	        @Test(priority=9,description="Navigate to Web Console by clicking 'Web Reservation' link on frontdesk, and create a web reservation.Verify rates and taxes posted for booking on frontdesk.")
+	        /*@Test(priority=9,description="Navigate to Web Console by clicking 'Web Reservation' link on frontdesk, and create a web reservation.Verify rates and taxes posted for booking on frontdesk.")
 
 			public void fn_createWebReservAndVerifyRatesOnFD() throws Throwable{
 				try{
@@ -433,7 +433,7 @@ public class AdminTest_PT {
 					throw e;
 				}
 			
-			}
+			}*/
 
 			/*
 			 * 

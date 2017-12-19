@@ -1,9 +1,7 @@
 package com.hotelogix.languageSmoke.General.PayTypes;
 
-<<<<<<< HEAD
-public class PayTypesListPage {
 
-=======
+
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
@@ -52,5 +50,5 @@ public class PayTypesListPage {
 		   throw e;
 	   }
 	}
->>>>>>> barkha
+
 }

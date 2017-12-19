@@ -54,4 +54,13 @@ public class VerifyUtils {
 		}
 	}
 	
+	
+	public void fn_AsserEqualsWithBooleanValue(boolean actual, boolean expected){
+		try{
+			Assert.assertEquals(actual, expected);
+		}catch(AssertionError e){
+			throw e;
+		}
+	}
+	
 }
